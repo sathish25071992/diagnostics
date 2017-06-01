@@ -1,0 +1,58 @@
+.activitybar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	background-color: rgba(30, 30, 30, 1);
+}
+.activity-list {
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	justify-content: flex-end;
+	align-content: center;
+	display: inline-block;
+}
+
+.activity-item {
+	cursor: pointer;
+	display: inline-block;
+	-ms-transition: -ms-transform 50ms ease;
+	-webkit-transition: -webkit-transform 50ms ease;
+	-moz-transition: -moz-transform 50ms ease;
+	-o-transition: -o-transform 50ms ease;
+	transition: transform 50ms ease;
+	position: relative;
+	display: block;
+}
+
+.activity-label {
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	height: auto;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 0px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-left: 50px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	opacity: 0.6;
+}
+
+.activity-label.configuration {
+	-webkit-mask: url('configuration.svg') no-repeat 50% 50%;
+}
+.activity-label.upgrade {
+	-webkit-mask: url('upgrade.svg') no-repeat 50% 50%;
+}
+.activity-label.diagnostics {
+	-webkit-mask: url('diagnostics.svg') no-repeat 50% 50%;
+}
+
+.activity-label.active {
+	opacity: 1;
+}
