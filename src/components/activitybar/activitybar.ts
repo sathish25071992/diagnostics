@@ -49,7 +49,7 @@ export class activitybar extends component {
         super.updateStyle();
     }
 
-    addActivity(name: string, workbench: dom | undefined, fn: (act: activity) => void) {
+    addActivity(name: string, workbench: dom | undefined, context: any, fn: (act: activity, context: any) => void) {
         let act = new activity(name);
         var item = emptyDom().element('li', 'activity-item');
         item.apendTo(this.activityList);
@@ -97,7 +97,7 @@ export class activitybar extends component {
             console.log('Invoking the registered workbench');
             console.log(act);
             //after this call the registered callback
-            fn(act);
+            fn(act, context);
         })
         this.activities.push(act);
     }

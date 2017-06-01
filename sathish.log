@@ -1,0 +1,1255 @@
+/home/Sathish/Personal/diagostics/out/components/activitybar/activitybar.js:25 /home/Sathish/Personal/diagostics/out/components/activitybar/media/activitybar.css
+/home/Sathish/Personal/diagostics/out/load.js:6 true
+/home/Sathish/Personal/diagostics/out/load.js:6 true
+/home/Sathish/Personal/diagostics/out/load.js:6 true
+/home/Sathish/Personal/diagostics/node_modules/noble/lib/hci-socket/bindings.js:117 noble warning: adapter state unauthorized, please run as root or with sudo
+/home/Sathish/Personal/diagostics/node_modules/noble/lib/hci-socket/bindings.js:118                or see README for information on running without root/sudo:
+/home/Sathish/Personal/diagostics/node_modules/noble/lib/hci-socket/bindings.js:119                https://github.com/sandeepmistry/noble#running-on-linux
+/home/Sathish/Personal/diagostics/out/workspace/workspace.js:57 Welcome to diagnostics application
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:120 dom
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:120 dom
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:120 dom
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:82 creating child
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:82 creating child
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:82 creating child
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:94 creating child
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:94 creating child
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/diagnostics.js:94 creating child
+/home/Sathish/Personal/diagostics/out/components/activitybar/activitybar.js:94 Invoking the registered workbench
+/home/Sathish/Personal/diagostics/out/components/activitybar/activitybar.js:95 activity {name: "diagnostics", isActive: true, label: dom, workbench: dom}
+/home/Sathish/Personal/diagostics/out/workspace/workspace.js:173 diagnostics workbench activated
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:42 JLink server is running
+/home/Sathish/Personal/diagostics/out/workspace/workspace.js:175 activity {name: "diagnostics", isActive: true, label: dom, workbench: dom}
+/home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:48 JLink is available
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection TypeError: Cannot read property 'join' of null
+    at /home/Sathish/Personal/diagostics/out/components/workbench/diagnostics/jlink.js:31:28
+    at tryCatcher (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:143:10)
+    at Async.drainQueues (/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103
+/home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870 [31mUnhandled rejection Error: executeJlinkCommands: command failed: FAILED: Can not connect to J-Link via USB.
+    at Socket.<anonymous> (/home/Sathish/Personal/diagostics/node_modules/@connectedyard/node-jlink/lib/jlinkexe.js:98:14)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at Pipe.onread (net.js:551:20)[0m
+
+printWarning @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:870
+formatAndLogError @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:590
+fireRejectionEvent @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:615
+Promise._notifyUnhandledRejection @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/debuggability.js:61
+Async._drainQueue @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:138
+Async._drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:146
+Async.drainQueues @ /home/Sathish/Personal/diagostics/node_modules/bluebird/js/release/async.js:17
+_tickCallback @ internal/process/next_tick.js:103

@@ -3,7 +3,7 @@
     height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   overflow: auto;
   background-color: #f2f2f2;
 }
