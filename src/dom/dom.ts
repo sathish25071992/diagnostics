@@ -1,6 +1,7 @@
 'use strict';
 
 import {Dimension} from '../workspace/util'
+import * as Promise from 'bluebird'
 
 export class dom {
     private currentElement: HTMLElement;
@@ -96,10 +97,14 @@ export class dom {
     }
 
     addClass(name: string) {
-        this.currentElement.classList.add(name);
+        if(!this.currentElement.classList.contains(name)) {
+            this.currentElement.classList.add(name);            
+        }
     }
     removeClass(name: string) {
-        this.currentElement.classList.remove(name);
+        if(this.currentElement.classList.contains(name)) {        
+            this.currentElement.classList.remove(name);
+        }
     }
     clearChildren() {
         for(let i = 0; i < this.currentElement.childElementCount; i++) {
@@ -116,4 +121,15 @@ export function quickDom(element: any) {
 export function emptyDom(): dom {
 
     return new dom();
+}
+
+export function domContentLoaded(): Promise<any> {
+	return new Promise<any>((c, e) => {
+		const readyState = document.readyState;
+		if (readyState === 'complete' || (document && document.body !== null)) {
+			window.setImmediate(c);
+		} else {
+			window.addEventListener('DOMContentLoaded', c, false);
+		}
+	});
 }

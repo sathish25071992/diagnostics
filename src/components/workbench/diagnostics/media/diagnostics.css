@@ -1,4 +1,66 @@
-.workbench > .workbench-diagnostics {
+.diagnostics-action {
+  /*position: absolute;*/
+  display: inherit;
+  padding: 30px;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}
+.hide {
+  visibility: hidden
+}
+.idle {
+
+    opacity: 0.4;
+    --diagnostics-color: grey;
+}
+
+.progress {
+    /* tryto add loading animation??? */
+    opacity: 1;
+    --diagnostics-color: grey;
+}
+
+.diagnostics-item {
+    width: 200px;
+    height: 220px;
+    float: left;
+    padding: 15px;
+}
+
+.diagnostics-content {
+    text-align: center;
+    background-color: white;
+    height: 100%;
+    box-shadow: -4px 4px 8px 2px rgba(30, 30, 30, 0.3);
+}
+
+.diagnostics-name {
+    height: 25%;
+    position: relative;
+    font-size: 20px;
+}
+
+.diagnostics-name a, .diagnostics-info a, .diagnostics-result a {
+    position: absolute;
+    top: 50%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    transform: translate(-50%, -50%);
+}
+
+.diagnostics-info {
+    height: 55%;
+    position: relative;
+    font-size: 17px;
+}
+.diagnostics-result {
+    height: 20%;
+    position: relative;
+    background-color: var(--diagnostics-color);
+    font-size: 22px;
+}
+
+/*.workbench > .workbench-diagnostics {
     overflow: hidden;
     min-height: 210px;
     min-width: 260px;
@@ -31,7 +93,7 @@
     height: 100%;
     background-color: white;
     opacity: 1;
-    /*box-shadow: 3px 3px 10px #888888;*/
+    //box-shadow: 3px 3px 10px #888888;
 }
 
 .failed{
@@ -78,7 +140,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
-}
+}*/
 /*
 .workbench-diagnostics > .workbench-table {
     width: 100%;

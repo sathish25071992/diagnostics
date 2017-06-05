@@ -3,6 +3,8 @@ import * as path from 'path';
 import * as jlink from './jlink';
 import * as EventEmitter from 'events';
 import * as Promise from 'bluebird'
+import {workbenchAction, workbench} from '../workbench'
+import {activity, activitybar} from '../../activitybar/activitybar'
 
 
 loadstyle(path.join(__dirname, './media/diagnostics.css'));
@@ -108,7 +110,7 @@ export class diagnosticsContent {
         this.content.testName = name;
         if(!this.content.nameContainer.getHTMLElement().hasChildNodes()) {
             console.log('creating child');
-        var a = emptyDom().element('a', 'diagnostics-name');
+        var a = emptyDom().element('a', '');
         } else {
             var a = quickDom(this.content.nameContainer.getHTMLElement().firstElementChild);
         }
@@ -120,7 +122,7 @@ export class diagnosticsContent {
         this.content.info = info;
         if(!this.content.infoContainer.getHTMLElement().hasChildNodes()) {
             console.log('creating child');
-        var a = emptyDom().element('a', 'diagnostics-info');
+        var a = emptyDom().element('a', '');
         } else {
             var a = quickDom(this.content.infoContainer.getHTMLElement().firstElementChild);
         }
@@ -131,7 +133,7 @@ export class diagnosticsContent {
         this.content.Result = result;
         if(!this.content.resultContainer.getHTMLElement().hasChildNodes()) {
             console.log('creating child');
-        var a = emptyDom().element('a', 'diagnostics-result');
+        var a = emptyDom().element('a', '');
         } else {
             var a = quickDom(this.content.resultContainer.getHTMLElement().firstElementChild);
         }
@@ -173,34 +175,47 @@ export class diagnosticsResultContainer {
     }
 }
 
-export class diagnostics {
-    public container: dom;
-    private table: dom;
+function diagnosticsCb() {
+    console.log('working properly');
+    
+}
 
+export class diagnostics extends workbenchAction {
     public temperatureResult: diagnosticsResultContainer;
     public ambientLightResult: diagnosticsResultContainer;
     public _9axisResult: diagnosticsResultContainer;
 
-    constructor() {
-        this.container = emptyDom().element('div', 'workbench-diagnostics');
+    diagnosticsActionElement: dom;
 
-        // var [columns, rows] = this.createTableElements(2, 3, this.table);
-        // console.log(columns);
+    private action: workbenchAction;
+    private activity: activity;
 
-        // remove name from this constructor since diagnosticsResultContainer is deticated to generate this. so internally
-        // he can add this name.???
-        this.temperatureResult = new diagnosticsResultContainer(this.container, 'diagnostics-item');
-        this.ambientLightResult = new diagnosticsResultContainer(this.container, 'diagnostics-item');
-        this._9axisResult = new diagnosticsResultContainer(this.container, 'diagnostics-item');
+    constructor(activitybar: activitybar, workbench: workbench) {
+        super('Diagnostics', emptyDom().element('div', 'diagnostics-action'));
+        console.log('hi');
+        console.log(this.actionElement);
 
-        this.temperatureResult.diagnosticsContent.diagnosticsname('TH sensor')
-        this.ambientLightResult.diagnosticsContent.diagnosticsname('Ambient sensor')
-        this._9axisResult.diagnosticsContent.diagnosticsname('9-axis sensor')
+        this.diagnosticsActionElement = this.actionElement;
 
-        this.temperatureResult.diagnosticsContent.diagnosticsinfo('TH sensor result:' +' 24.5')
-        this.ambientLightResult.diagnosticsContent.diagnosticsinfo('Ambient sensor')
-        this._9axisResult.diagnosticsContent.diagnosticsinfo('9-axis sensor')
+        // create a workbechAction
+        this.action = workbench.addWorkbench(this);
 
+        // Create a workbench action and append to action container
+
+
+        // Create a activity
+        this.activity = activitybar.addActivity('diagnostics', this.action, this, diagnosticsCb);
+
+        this.temperatureResult = this.addDiagnosticsResult('TH sensor');
+        this.ambientLightResult = this.addDiagnosticsResult('Ambient sensor')
+        this._9axisResult = this.addDiagnosticsResult('9-axis sensor');
+    }
+
+    addDiagnosticsResult(diagnosticsname: string): diagnosticsResultContainer {
+        var result = new diagnosticsResultContainer(this.diagnosticsActionElement, 'diagnostics-item');
+        result.diagnosticsContent.diagnosticsname(diagnosticsname);
+        result.diagnosticsContent.diagnosticsinfo('none');
+        return result;        
     }
 
     public start() {

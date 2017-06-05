@@ -18,10 +18,11 @@ function toFileUri(filePath) {
 const rootDir = path.join(__dirname, './src');
 const options = require('./src/tsconfig.json').compilerOptions;
 options.verbose = false;
-options.sourceMap = false;
-options.rootDir = rootDir;
-options.sourceRoot = toFileUri(rootDir);
+// options.sourceMap = false;
+// options.rootDir = rootDir;
+// options.sourceRoot = toFileUri(rootDir);
 
+console.log(options);
 // create and keep compiler 
 // var compilation = tsb.create(options);
 
@@ -31,7 +32,7 @@ gulp.task('build', function () {
 	const src = es.merge(
 		gulp.src(['src/**/*', '!src/**/*.ts'], { base: './src' }),
 		gulp.src('src/**/*.ts')
-		.pipe(tsc())
+		.pipe(tsc(options))
 	);
 	return src
 		.pipe(gulp.dest('out'));
