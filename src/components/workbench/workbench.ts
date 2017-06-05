@@ -9,7 +9,11 @@ import { diagnostics, startDiagnostics } from '../workbench/diagnostics/diagnost
 export class workbenchAction {
     title: string;
     private activateCb;
+    actionElement: dom;    
     parent: dom;
+
+    public workbench: workbench;
+
     private _active: boolean;
     set active(val: boolean) {
         this._active = val;
@@ -18,12 +22,16 @@ export class workbenchAction {
         }
         if(val != true) {
         this.actionElement.addClass('hide');
+
         if(this.parent.getHTMLElement().contains(this.actionElement.getHTMLElement())) {
             this.parent.getHTMLElement().removeChild(this.actionElement.getHTMLElement());
+
         }
         } else {
         this.actionElement.removeClass('hide');
         this.actionElement.apendTo(this.parent);
+        this.workbench.setTitle(this.title);
+        console.log('setting title to ', this.title);
                     
         }
         // this.activateCb(this);
@@ -34,7 +42,6 @@ export class workbenchAction {
     registeractivateHandler(fn:(workbenchAction) => void) {
         this.activateCb = fn;
     }
-    actionElement: dom;
     
 
     constructor(title: string, action: dom){
@@ -91,6 +98,7 @@ export class workbench extends component {
             var a = quickDom(this.titlebar.getHTMLElement().firstElementChild);
         }
         a.apendTo(this.titlebar);
+        console.log(title);
         a.getHTMLElement().innerHTML = title;
     }
 
@@ -102,6 +110,7 @@ export class workbench extends component {
         this.actionList.push(action);
         action.actionElement.apendTo(this.actionContainer);
         action.parent = this.actionContainer;
+        action.workbench = this;        
         action.active= false;
         this.setTitle(action.title);
         return action;

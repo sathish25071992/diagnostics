@@ -57,7 +57,7 @@ export class activitybar extends component {
         activityparent.apendTo(this.container);
 
         this.activityList = emptyDom().element('ul', 'activity-list');
-        this.activityList.apendTo(activityparent);        
+        this.activityList.apendTo(activityparent);
     }
 
     updateStyle() {

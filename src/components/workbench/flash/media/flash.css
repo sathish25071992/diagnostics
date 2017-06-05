@@ -1,0 +1,122 @@
+.flash-action {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+}
+
+.flash-info {
+	height: 17%;
+	position: relative;
+	text-align: center;
+}
+
+.flash-info a {
+    position: absolute;
+    top: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    transform: translate(-50%, -100%);
+    color: black;
+}
+
+.flash-textbox {
+	float: left;
+	height: 100%;
+	width: 70%;
+	text-align: center;
+}
+
+.flash-textbox .textbox {
+    position: relative;
+    top: 50%;
+    height: 30px;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    background-color: #e6e6e6;
+    left: 50%;
+    box-shadow: -3px 3px 8px 0px #bbbaba;
+    border-width: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.flash-selectbutton {
+    height: 100%;
+    float: left;
+    width: 30%;
+}
+
+.flash-selectbutton .button {
+    position: relative;
+    top: 50%;
+    height: 30px;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 122, 204, 0.5);
+    left: 50%;
+    border-width: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.flash-getpath {
+	height: 28%;
+	margin: 0 auto;
+	width: 700px;
+}
+.flash-trigger {
+    height: 22%;
+    margin: 0 auto;
+    width: 500px;
+}
+
+.flash-trigger .trigger {
+    position: relative;
+    top: 50%;
+    height: 50px;
+    width: 150px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 122, 204, 0.5);
+    left: 50%;
+    border-width: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;    
+}
+
+
+
+.flash-progress {
+	height: 33%
+}
+
+.flash-progress .progress {
+    /* width: 200px; */
+    /* height: 80px; */
+    position: relative;
+    top: 50%;
+    height: 3px;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(80, 80, 80, 0.2);
+    left: 50%;
+    /* border-width: 1px; */
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    /* border-radius: 5px; */
+    z-index: 5;
+}
+
+.flash-progress .progress-text {
+    /* width: 200px; */
+    /* height: 80px; */
+    position: relative;
+    top: 65%;
+    height: 30px;
+    width: 150px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(80, 80, 80, 0.2);
+    left: 50%;
+    /* border-width: 1px; */
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    /* border-radius: 5px; */
+    /* z-index: 5; */
+}

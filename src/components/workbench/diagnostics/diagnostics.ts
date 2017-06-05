@@ -192,10 +192,11 @@ export class diagnostics extends workbenchAction {
 
     constructor(activitybar: activitybar, workbench: workbench) {
         super('Diagnostics', emptyDom().element('div', 'diagnostics-action'));
-        console.log('hi');
+        console.log('Contructing flash UI');
         console.log(this.actionElement);
 
-        this.diagnosticsActionElement = this.actionElement;
+        this.diagnosticsActionElement = emptyDom().element('div', 'diagnostics-action-container');
+        this.diagnosticsActionElement.apendTo(this.actionElement);
 
         // create a workbechAction
         this.action = workbench.addWorkbench(this);

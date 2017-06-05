@@ -46,8 +46,8 @@
 .activity-label.configuration {
 	-webkit-mask: url('configuration.svg') no-repeat 50% 50%;
 }
-.activity-label.upgrade {
-	-webkit-mask: url('upgrade.svg') no-repeat 50% 50%;
+.activity-label.flash {
+	-webkit-mask: url('flash.svg') no-repeat 50% 50%;
 }
 .activity-label.diagnostics {
 	-webkit-mask: url('diagnostics.svg') no-repeat 50% 50%;
