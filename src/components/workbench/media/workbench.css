@@ -9,6 +9,7 @@ body {
     top: 50%;
     font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
     transform: translate(-50%, -50%);
+    font-size: 25px;
     color: white;
 }
 

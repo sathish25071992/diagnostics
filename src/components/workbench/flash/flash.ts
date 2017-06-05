@@ -3,8 +3,10 @@ import * as path from 'path'
 loadstyle(path.join(__dirname, './media/flash.css'));
 
 import {workbench, workbenchAction} from '../workbench'
-import {dom, emptyDom} from '../../../dom/dom'
+import {dom, emptyDom, quickDom} from '../../../dom/dom'
 import {activity, activitybar} from '../../activitybar/activitybar'
+
+const {dialog} = require('electron').remote;
 
 function flashCb(act: activity, context: any) {
 
@@ -23,6 +25,7 @@ export class flash extends workbenchAction {
 	private progress: dom;
 	private progress_text: dom;
 	
+	private binaryPath: string;
 
     constructor(activitybar: activitybar, workbench: workbench) {
         super('Flash', emptyDom().element('div', 'flash-action'));
@@ -44,6 +47,49 @@ export class flash extends workbenchAction {
 
 		// populate content to the flash part
 
+		this.createElement();
+
+		this.button.on('click', (e: Event) => {
+			this.setPath(dialog.showOpenDialog({properties: ['openFile']}));
+		});
+
+		this.flashTrigger.on('click', (e: Event) => {
+			var i = 0;
+			var timer = setInterval((x) => {
+				if(i === 100) {
+					clearInterval(timer);
+				}
+				this.setPercentage(i);
+				console.log(i);
+				i++;
+			}, 10, i)
+		});
+
+	}
+
+    setPercentage(percent: number) {
+		if((percent < 0) && (percent > 100)) {
+			return;
+		}		
+        if(!this.progress_text.getHTMLElement().hasChildNodes()) {
+            console.log('creating child');
+        	var a = emptyDom().element('a', '');
+        	a.apendTo(this.progress_text);		
+        } else {
+            var a = quickDom(this.progress_text.getHTMLElement().firstElementChild);
+        }
+        console.log(percent);
+
+		this.progress.getHTMLElement().style.width = percent + '%';
+        a.getHTMLElement().innerHTML = percent + '%' + ' completed';
+    }
+
+    setPath(path: string) {
+		(<HTMLInputElement>this.textbox.getHTMLElement()).value = path;
+		this.binaryPath = path;
+    }
+	private createElement() {
+
 		this.info = emptyDom().element('div', 'flash-info');
 		this.info.apendTo(this.flashActionElement);
 
@@ -58,7 +104,7 @@ export class flash extends workbenchAction {
 		var userInput = emptyDom().element('div', 'flash-textbox');
 		userInput.apendTo(getPath);
 
-		this.textbox = emptyDom().element('div', 'textbox');
+		this.textbox = emptyDom().element('input', 'textbox');
 		this.textbox.apendTo(userInput);
 
 		var userSelect = emptyDom().element('div', 'flash-selectbutton');
@@ -77,11 +123,25 @@ export class flash extends workbenchAction {
 		var flash_progress = emptyDom().element('div', 'flash-progress');
 		flash_progress.apendTo(this.flashActionElement);
 
-		this.progress = emptyDom().element('div', 'progress');
-		this.progress.apendTo(flash_progress);
+		var progress = emptyDom().element('div', 'progress');
+		progress.apendTo(flash_progress);
+		this.progress = emptyDom().element('div', 'progress-bar');
+		this.progress.apendTo(progress);
 
 		this.progress_text = emptyDom().element('div', 'progress-text');
 		this.progress_text.apendTo(flash_progress);
+
+		var a = emptyDom().element('a', '');
+		a.getHTMLElement().innerText = 'Browse';
+		a.apendTo(this.button);
+
+		a = emptyDom().element('a', '');
+		a.getHTMLElement().innerText = 'Flash Binary';
+		a.apendTo(this.flashTrigger);
+
+		a = emptyDom().element('a', '');
+		a.getHTMLElement().innerText = 'Flash not yet started';
+		a.apendTo(this.progress_text);
 	}
 		
 }

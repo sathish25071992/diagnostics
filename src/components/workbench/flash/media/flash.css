@@ -38,6 +38,9 @@
     box-shadow: -3px 3px 8px 0px #bbbaba;
     border-width: 1px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;    
 }
 
 .flash-selectbutton {
@@ -57,6 +60,16 @@
     border-width: 1px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button a {
+    position: absolute;
+    top: 50%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
 .flash-getpath {
@@ -74,16 +87,24 @@
     position: relative;
     top: 50%;
     height: 50px;
-    width: 150px;
+    width: 170px;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 122, 204, 0.5);
     left: 50%;
     border-width: 1px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;    
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-
+.trigger a {
+    position: absolute;
+    top: 50%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    transform: translate(-50%, -50%);
+    color: white;  
+}
 
 .flash-progress {
 	height: 33%
@@ -103,6 +124,24 @@
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     /* border-radius: 5px; */
     z-index: 5;
+    text-align: center
+}
+
+.flash-progress .progress .progress-bar {
+    /* width: 200px; */
+    /* height: 80px; */
+    position: relative;
+    top: 50%;
+    height: 3px;
+    width: 0%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 122, 204, 1);
+    left: 50%;
+    /* border-width: 1px; */
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    /* border-radius: 5px; */
+    z-index: 5;
+    text-align: center
 }
 
 .flash-progress .progress-text {
@@ -111,12 +150,21 @@
     position: relative;
     top: 65%;
     height: 30px;
-    width: 150px;
+    /*width: 300px;*/
     transform: translate(-50%, -50%);
-    background-color: rgba(80, 80, 80, 0.2);
+    /*background-color: rgba(80, 80, 80, 0.2);*/
     left: 50%;
+    text-align: center;
     /* border-width: 1px; */
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     /* border-radius: 5px; */
     /* z-index: 5; */
+}
+
+.progress-text a{
+    position: absolute;
+    top: 50%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    transform: translate(-50%, -50%);
+    color: black;
 }
