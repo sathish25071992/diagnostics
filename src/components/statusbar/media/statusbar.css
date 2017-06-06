@@ -1,5 +1,10 @@
 .statusbar {
 	background-color: rgba(0, 122, 204, 1);
+
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .spinner {
@@ -36,15 +41,14 @@
   overflow: hidden;
   background-color: #ddd;
 }
-.loader:before{
+.statusbar:before{
   display: block;
   position: absolute;
   content: "";
   left: -200px;
   width: 200px;
-  height: 4px;
-  background-color: #2980b9;
-  animation: loading 2s linear infinite;
+  height: 100%;
+  animation: loading 2s linear infinite, background 1.4s infinite ease-in-out alternate;
 }
 
 @keyframes loading {
