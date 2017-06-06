@@ -79,7 +79,7 @@
 
 .progress {
     /* tryto add loading animation??? */
-    opacity: 1;
+    opacity: 0.4;
     --diagnostics-color: grey;
 }
 
@@ -95,6 +95,8 @@
     background-color: white;
     height: 100%;
     box-shadow: -4px 4px 8px 2px rgba(30, 30, 30, 0.3);
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
 }
 
 .diagnostics-name {
@@ -125,6 +127,7 @@
     font-weight: bold;
     align-items: center;
     justify-content: center;
+    border-bottom-left-radius: 35px;
 }
 
 /*.workbench > .workbench-diagnostics {
