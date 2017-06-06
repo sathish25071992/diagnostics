@@ -222,10 +222,13 @@ export class diagnostics extends workbenchAction {
             this.startDiagnosticsContainer.addClass('diagnostics-started');
 
             this.startDiagnosticsContainer.getHTMLElement().firstElementChild.innerHTML = 'Stop Diagnostics';
+            this.diagnosticsActionElement.removeClass('idle');            
+            this.diagnosticsActionElement.addClass('progress');
         } else {
             this.startDiagnosticsContainer.removeClass('diagnostics-started');
             this.startDiagnosticsContainer.addClass('diagnostics-not-started');
             this.startDiagnosticsContainer.getHTMLElement().firstElementChild.innerHTML = 'Start Diagnostics'
+            this.diagnosticsActionElement.removeClass('progress');
 
         }
     }
@@ -241,6 +244,8 @@ export class diagnostics extends workbenchAction {
 
         this.diagnosticsActionElement = emptyDom().element('div', 'diagnostics-action-container');
         this.diagnosticsActionElement.apendTo(this.actionElement);
+        console.log('adding class');
+        this.diagnosticsActionElement.addClass('idle');
 
         this.startDiagnosticsContainer = emptyDom().element('div', 'start-diagnostics');
         this.startDiagnosticsContainer.apendTo(this.actionElement);
@@ -257,6 +262,7 @@ export class diagnostics extends workbenchAction {
             if (this.diagnosticsTrigger) {
                 startDiagnostics().then((data) => {
                     this.renderData(data);
+                    this.diagnosticsTrigger = false;
                 })
             } else {
                 stopDiagnostics();
@@ -319,7 +325,7 @@ export class diagnostics extends workbenchAction {
         this.ambientLightResult.diagnosticsContent.diagnosticsresult('Success');
         this.ambientLightResult.diagnosticsContent.content.contentContainer.addClass('success');
 
-        var info = '9-axis value = ' + (result.diagnosticsData.AccXData);
+        var info = '9-axis value = ' + (result.diagnosticsData.AccXData.toFixed(3));
 
         this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('idle');
         this._9axisResult.diagnosticsContent.diagnosticsinfo(info);
