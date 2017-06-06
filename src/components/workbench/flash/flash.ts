@@ -1,4 +1,5 @@
 import { loadstyle } from "../../../load";
+import * as jlink from '../../../util/jlink';
 import * as path from 'path'
 loadstyle(path.join(__dirname, './media/flash.css'));
 
@@ -53,16 +54,26 @@ export class flash extends workbenchAction {
 			this.setPath(dialog.showOpenDialog({properties: ['openFile']}));
 		});
 
+		process.stdout.on('data', (data) => {
+			console.log(data);
+		})
+
 		this.flashTrigger.on('click', (e: Event) => {
 			var i = 0;
-			var timer = setInterval((x) => {
-				if(i === 100) {
-					clearInterval(timer);
-				}
-				this.setPercentage(i);
-				console.log(i);
-				i++;
-			}, 10, i)
+
+			jlink.flashProgram(this.binaryPath, percent => {
+				console.log(percent);
+				this.setPercentage(percent);
+
+			});
+			// var timer = setInterval((x) => {
+			// 	if(i === 10) {
+			// 		clearInterval(timer);
+			// 	}
+			// 	this.setPercentage(i * 10);
+			// 	console.log(i);
+			// 	i++;
+			// }, 500, i);
 		});
 
 	}
