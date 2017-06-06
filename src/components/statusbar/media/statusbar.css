@@ -5,6 +5,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  opacity: 0.5;
 }
 
 .spinner {
@@ -24,13 +25,13 @@
 }
 @keyframes background {
   0% {
-  background-color: #27ae60;
+  background-color: #00bbff;
   }
   50% {
-    background-color: #9b59b6;
+    background-color: #00faff;
   }
   100% {
-    background-color: #c0392b;
+    background-color: #00ffa5;
   }
 }
 
