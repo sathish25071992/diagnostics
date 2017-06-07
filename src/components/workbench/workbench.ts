@@ -5,6 +5,7 @@ loadstyle(path.join(__dirname, './media/workbench.css'));
 import { dom, quickDom, emptyDom } from '../../dom/dom'
 import { component } from '../component'
 import { diagnostics, startDiagnostics } from '../workbench/diagnostics/diagnostics'
+import { messageHandle, writeMessage } from './message'
 
 export class workbenchAction {
     title: string;
@@ -62,6 +63,8 @@ export class workbench extends component {
     titleContainer: dom
     titlebar: dom;
 
+    messageBox: messageHandle;
+
     constructor(
         parent: dom
     ) {
@@ -88,6 +91,8 @@ export class workbench extends component {
 
         this.titleContainer.apendTo(this.container);
         this.actionContainer.apendTo(this.container);
+
+        this.messageBox = new messageHandle(this.container);
     }
 
     setTitle(title:string) {

@@ -66,3 +66,131 @@ body {
   /*background-color: black;*/
 
 }
+
+.message-box {
+    width: 500px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+    color: white;
+    background-color: rgba(30,30,30,0.6);
+    /* border-radius: 10px; */
+  box-shadow: -3px 3px 10px 0px rgba(0, 0, 0, 0.5);    
+}
+
+.message-box.hide {
+  top: -100px;
+  z-index: -1;
+}
+
+.message-box.show {
+  top: 50%;
+  z-index: 1001;  
+}
+
+.message-box-sevearity {
+    /* position: absolute; */
+    /* width: 50px; */
+    height: calc(100% - 20px);
+    margin: 10px;
+    /* text-align: center; */
+    /* top: 50%; */
+    background-clip: content-box;
+    flex: 0 1 75px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.message-box-sevearity.warn {
+  background-color: orange;
+  --message-box-before: 'Warn'
+}
+
+.message-box-sevearity.error {
+  background-color: red;
+  --message-box-before: 'Error'
+}
+
+.message-box-sevearity.info {
+  background-color: blue;
+  --message-box-before: 'Info'
+}
+
+.message-box-sevearity::before {
+  content: var(--message-box-before);
+}
+
+.message-box-message {
+    flex: 1 1 auto;
+    margin: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: row;    
+}
+
+.message-box-message .message {
+    flex: 1 1 auto;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+border-right: rgba(255, 255, 255, 0.5);
+    border-right-style: solid;
+    border-right-width: 1px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+}
+
+.message-box-message .button{
+    flex: 0 1 60px;
+    border-left: white;
+    border-left-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+    /* background-color: grey; */
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.message-box-message .button:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.message-box-message .button::before{
+  content: 'OK';
+}
+
+.message-box-message .message * {
+  padding: 5px;
+}
+
+iframe {
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+}
+
+iframe.hide {
+  z-index: -1;
+}
+
+iframe.show {
+  z-index: 1000;
+}

@@ -15,6 +15,12 @@ export class dom {
         }
     }
 
+    setID(val: string) {
+        if(typeof val !== 'undefined') {
+            this.currentElement.id = val;
+        }
+    }
+
     title(val?: string):string {
         if(typeof val != 'undefined') {
             this.currentElement.title = val;

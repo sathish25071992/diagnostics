@@ -16,7 +16,19 @@ export class statusbar extends component {
         }
         this.container = emptyDom().element('div', 'statusbar');
         this.container.apendTo(parent);
-        emptyDom().element('div', 'statusbar-progress').apendTo(this.container);
+<<<<<<< HEAD
+
+        var progress = emptyDom().element('div', 'statusbar-progress');
+        progress.apendTo(this.container);
+
+        var info = emptyDom().element('ul', 'status-info');
+        info.apendTo(progress);
+=======
+        var statusbarProgress = emptyDom().element('div', 'statusbar-progress');
+
+        statusbarProgress.apendTo(this.container);
+        generateProgressBar(statusbarProgress);
+>>>>>>> 505e58c91fa46e44d70f2ffdd8d5cbe82ad2fa19
     }
 
     updateStyle() {
@@ -24,4 +36,35 @@ export class statusbar extends component {
         super.updateStyle();
         let container = this.getcontainer();
     }
+}
+
+<<<<<<< HEAD
+interface statusInfo {
+    name: string;
+    element: dom
+}
+
+registerStatusInfo(name: string): statusInfo {
+    info: statusInfo;
+
+    info.name = name;
+
+    info.element = emptyDom().element('li', 'status-info-element');
+    info.element.setID(name);
+
+    return info;
+=======
+function generateProgressBar(parent:dom) {
+    emptyDom().element('div', 'css-load-shaft1').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft2').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft3').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft4').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft5').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft6').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft7').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft8').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft9').apendTo(parent);
+    emptyDom().element('div', 'css-load-shaft10').apendTo(parent);
+
+>>>>>>> 505e58c91fa46e44d70f2ffdd8d5cbe82ad2fa19
 }
