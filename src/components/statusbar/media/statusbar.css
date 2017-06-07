@@ -5,10 +5,65 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  opacity: 0.5;
 }
 
-.spinner {
+.statusbar-progress *, .statusbar-progress *:before, .statusbar-progress *:after{
+	box-sizing: border-box;
+}
+
+.statusbar-progress {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+.statusbar-progress > div {
+	float: left;
+	background: rgba(185,108,255,0.58);
+	height: 100%;
+	width: 10%;
+}
+
+.statusbar-progress .css-load-shaft1 {
+	animation-delay: 0.06s;
+}
+.statusbar-progress .css-load-shaft2 {
+	animation-delay: 0.13s;
+}
+.statusbar-progress .css-load-shaft3 {
+	animation-delay: 0.17s;
+}
+.statusbar-progress .css-load-shaft4 {
+	animation-delay: 0.23s;
+}
+.statusbar-progress .css-load-shaft5 {
+	animation-delay: 0.29s
+}
+.statusbar-progress .css-load-shaft6 {
+	animation-delay: 0.35s;
+}
+.statusbar-progress .css-load-shaft7 {
+	animation-delay: 0.40s;
+}
+.statusbar-progress .css-load-shaft8 {
+	animation-delay: 0.46s;
+}
+.statusbar-progress .css-load-shaft9 {
+	animation-delay: 0.52s;
+}
+.statusbar-progress .css-load-shaft10 {
+	animation-delay: 0.58s;
+}
+.statusbar-progress > div {
+	height: 100%;
+	animation: cssload-wave 1.15s infinite ease-in-out;
+}
+
+@keyframes cssload-wave {
+	50% {
+		background: rgb(86,215,198);
+	}
+}
+/*.spinner {
   animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
 }
 
@@ -59,4 +114,4 @@
     80% { left: 50%;}
     95% {left: 120%;}
     to {left: 100%;}
-}
+}*/
