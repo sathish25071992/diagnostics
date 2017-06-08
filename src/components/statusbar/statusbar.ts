@@ -16,19 +16,12 @@ export class statusbar extends component {
         }
         this.container = emptyDom().element('div', 'statusbar');
         this.container.apendTo(parent);
-<<<<<<< HEAD
 
         var progress = emptyDom().element('div', 'statusbar-progress');
         progress.apendTo(this.container);
 
         var info = emptyDom().element('ul', 'status-info');
         info.apendTo(progress);
-=======
-        var statusbarProgress = emptyDom().element('div', 'statusbar-progress');
-
-        statusbarProgress.apendTo(this.container);
-        generateProgressBar(statusbarProgress);
->>>>>>> 505e58c91fa46e44d70f2ffdd8d5cbe82ad2fa19
     }
 
     updateStyle() {
@@ -38,22 +31,24 @@ export class statusbar extends component {
     }
 }
 
-<<<<<<< HEAD
-interface statusInfo {
+export interface statusInfo {
     name: string;
     element: dom
 }
 
-registerStatusInfo(name: string): statusInfo {
-    info: statusInfo;
-
-    info.name = name;
-
-    info.element = emptyDom().element('li', 'status-info-element');
+export function registerStatusInfo(name: string): statusInfo | null {
+    var statusInfo = document.querySelectorAll('ul.status-info');
+    if(statusInfo === null) {
+        console.error('not able to find the status bar. Please create the instance of statusbar first.');
+        return null;
+    }
+    var info: statusInfo = {name: name, element: emptyDom().element('li', 'status-info-element')}
     info.element.setID(name);
+    info.element.apendTo(quickDom(statusInfo.item(0)));
 
     return info;
-=======
+}
+
 function generateProgressBar(parent:dom) {
     emptyDom().element('div', 'css-load-shaft1').apendTo(parent);
     emptyDom().element('div', 'css-load-shaft2').apendTo(parent);
@@ -66,5 +61,4 @@ function generateProgressBar(parent:dom) {
     emptyDom().element('div', 'css-load-shaft9').apendTo(parent);
     emptyDom().element('div', 'css-load-shaft10').apendTo(parent);
 
->>>>>>> 505e58c91fa46e44d70f2ffdd8d5cbe82ad2fa19
 }
