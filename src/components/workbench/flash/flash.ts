@@ -3,11 +3,13 @@ import * as jlink from '../../../util/jlink';
 import * as path from 'path'
 loadstyle(path.join(__dirname, './media/flash.css'));
 
-import {workbench, workbenchAction} from '../workbench'
-import {dom, emptyDom, quickDom} from '../../../dom/dom'
-import {activity, activitybar} from '../../activitybar/activitybar'
+import { workbench, workbenchAction } from '../workbench'
+import { dom, emptyDom, quickDom } from '../../../dom/dom'
+import { activity, activitybar } from '../../activitybar/activitybar'
+import { messageHandle, writeMessage } from '../message'
 
-const {dialog} = require('electron').remote;
+
+const { dialog } = require('electron').remote;
 
 function flashCb(act: activity, context: any) {
 
@@ -16,8 +18,8 @@ function flashCb(act: activity, context: any) {
 export class flash extends workbenchAction {
 	flashActionElement: dom;
 
-    private action: workbenchAction;
-    private activity: activity;
+	private action: workbenchAction;
+	private activity: activity;
 
 	private info: dom;
 	private textbox: dom;
@@ -25,33 +27,33 @@ export class flash extends workbenchAction {
 	private flashTrigger: dom;
 	private progress: dom;
 	private progress_text: dom;
-	
+
 	private binaryPath: string;
 
-    constructor(activitybar: activitybar, workbench: workbench) {
-        super('Flash', emptyDom().element('div', 'flash-action'));
+	constructor(activitybar: activitybar, workbench: workbench) {
+		super('Flash', emptyDom().element('div', 'flash-action'));
 
 		console.log('Contructing flash UI');
 
-        console.log(this.actionElement);
+		console.log(this.actionElement);
 
-        this.flashActionElement = this.actionElement;
+		this.flashActionElement = this.actionElement;
 
-        // create a workbechAction
-        this.action = workbench.addWorkbench(this);
+		// create a workbechAction
+		this.action = workbench.addWorkbench(this);
 
-        // Create a workbench action and append to action container
+		// Create a workbench action and append to action container
 
 
-        // Create a activity
-        this.activity = activitybar.addActivity('flash', this.action, this, flashCb);
+		// Create a activity
+		this.activity = activitybar.addActivity('flash', this.action, this, flashCb);
 
 		// populate content to the flash part
 
 		this.createElement();
 
 		this.button.on('click', (e: Event) => {
-			this.setPath(dialog.showOpenDialog({properties: ['openFile']}));
+			this.setPath(dialog.showOpenDialog({ properties: ['openFile'] }));
 		});
 
 		process.stdout.on('data', (data) => {
@@ -60,12 +62,17 @@ export class flash extends workbenchAction {
 
 		this.flashTrigger.on('click', (e: Event) => {
 			var i = 0;
+			jlink.checkJLinkConnection().then(() => {
+				jlink.flashProgram(this.binaryPath, percent => {
+					console.log(percent);
+					this.setPercentage(percent);
 
-			jlink.flashProgram(this.binaryPath, percent => {
-				console.log(percent);
-				this.setPercentage(percent);
-
+				});
+			}).catch(e => {
+				writeMessage('error', 'JLink debugger not connected / some-one else using the JLink debugger');
 			});
+
+
 			// var timer = setInterval((x) => {
 			// 	if(i === 10) {
 			// 		clearInterval(timer);
@@ -78,27 +85,27 @@ export class flash extends workbenchAction {
 
 	}
 
-    setPercentage(percent: number) {
-		if((percent < 0) && (percent > 100)) {
+	setPercentage(percent: number) {
+		if ((percent < 0) && (percent > 100)) {
 			return;
-		}		
-        if(!this.progress_text.getHTMLElement().hasChildNodes()) {
-            console.log('creating child');
-        	var a = emptyDom().element('a', '');
-        	a.apendTo(this.progress_text);		
-        } else {
-            var a = quickDom(this.progress_text.getHTMLElement().firstElementChild);
-        }
-        console.log(percent);
+		}
+		if (!this.progress_text.getHTMLElement().hasChildNodes()) {
+			console.log('creating child');
+			var a = emptyDom().element('a', '');
+			a.apendTo(this.progress_text);
+		} else {
+			var a = quickDom(this.progress_text.getHTMLElement().firstElementChild);
+		}
+		console.log(percent);
 
 		this.progress.getHTMLElement().style.width = percent + '%';
-        a.getHTMLElement().innerHTML = percent + '%' + ' completed';
-    }
+		a.getHTMLElement().innerHTML = percent + '%' + ' completed';
+	}
 
-    setPath(path: string) {
+	setPath(path: string) {
 		(<HTMLInputElement>this.textbox.getHTMLElement()).value = path;
 		this.binaryPath = path;
-    }
+	}
 	private createElement() {
 
 		this.info = emptyDom().element('div', 'flash-info');
@@ -122,7 +129,7 @@ export class flash extends workbenchAction {
 		userSelect.apendTo(getPath);
 
 		this.button = emptyDom().element('div', 'button');
-		this.button.apendTo(userSelect);		
+		this.button.apendTo(userSelect);
 
 		var flash_trigger = emptyDom().element('div', 'flash-trigger');
 		flash_trigger.apendTo(this.flashActionElement);
@@ -154,5 +161,5 @@ export class flash extends workbenchAction {
 		a.getHTMLElement().innerText = 'Flash not yet started';
 		a.apendTo(this.progress_text);
 	}
-		
+
 }

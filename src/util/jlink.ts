@@ -44,7 +44,7 @@ export function jlinkMemRead(memory, size) {
 			});
 			console.log('reading memory complete');
 			r(memArr);
-		})
+		}).catch((err) => e(new Error('JLink debugger failed. Check your debugger connection')));
 	});
 	return promise;
 }
@@ -54,24 +54,41 @@ export function startJLinkServer() {
 	process.stdout.write("Wating for connection");
 
 	return new Promise((r, e) => {
-		JLinkConnectionTimer = setInterval(() => {
 			jlink.executeCommands(firmware).then(result => {
 				process.stdout.write("\n");
 				console.log("JLink is available");
 				clearInterval(JLinkConnectionTimer);
 				r(result);
+			}).catch(err => {
+				process.stdout.write(".");
+				console.log(err);
+				e(new Error('JLink command failed. Check your debugger connection'));
 			})
-				.catch(e => {
-					process.stdout.write(".");
-				})
-		}, 1000);
+	});
+}
+
+export function checkJLinkConnection() {
+	console.log("JLink server is running");
+	process.stdout.write("Wating for connection");
+
+	return new Promise((r, e) => {
+		jlink.executeCommands(firmware).then(result => {
+			process.stdout.write("\n");
+			console.log("JLink is available");
+			clearInterval(JLinkConnectionTimer);
+			r(result);
+		}).catch(err => {
+			process.stdout.write(".");
+			console.log(err);
+			e(err);
+		})
 	});
 }
 
 export function flashProgram(path: string, percentageListner: (percentage: number) => void) {
 	var flashCommand = ["r", "h", "erase", "loadfile " + path, "r", "g"];
 
-	if(typeof path === 'undefined') {
+	if (typeof path === 'undefined') {
 		return;
 	}
 
@@ -91,7 +108,7 @@ export function flashProgram(path: string, percentageListner: (percentage: numbe
 
 export function executeCommands(commandArray) {
 	if (commandArray === void 0) commandArray = [];
-	
+
 	var timeoutSeconds = 20;
 
 	if (commandArray.indexOf('exitonerror') === -1) {
@@ -119,11 +136,11 @@ export function executeCommands(commandArray) {
 		terminal.stdout.on('data', function (data) {
 			var output = data.toString('utf8');
 			result.stdout += output;
-			if(output.trim().match(/Programming flash/g) !== null) {
+			if (output.trim().match(/Programming flash/g) !== null) {
 				percentageFlag = true;
 			}
-			if(percentageFlag == true) {
-				if((percentage = output.trim().match(/(\d\d\d)%/g)) !== null) {
+			if (percentageFlag == true) {
+				if ((percentage = output.trim().match(/(\d\d\d)%/g)) !== null) {
 					percentage = percentage[0].replace('%', '');
 					event.emit('percentage', parseInt(percentage));
 				}
@@ -133,10 +150,6 @@ export function executeCommands(commandArray) {
 				clearTimeout(timeout);
 				reject(new Error("executeJlinkCommands: command failed: " + output.trim()));
 			}
-
-			// Compute percentage
-			//percentage = output.trim();
-			// event.emit('percentage', percentage);
 
 		});
 
