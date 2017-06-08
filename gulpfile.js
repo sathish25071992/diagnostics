@@ -46,7 +46,7 @@ gulp.task('watch', ['build'], function () {
 		console.log('extension is ' + path.extname(event.path));
 		if (path.extname(event.path) == '.ts') {
 			console.log('compiling typescript file')
-			src = gulp.src(event.path, {base: 'src'}).pipe(tsc());
+			src = gulp.src(event.path, {base: 'src'}).pipe(tsc()).on('error', console.error.bind(console));
 		}
 		else {
 			console.log('copying file');
