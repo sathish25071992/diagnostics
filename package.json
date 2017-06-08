@@ -26,6 +26,7 @@
     "@connectedyard/node-jlink": "^1.1.1",
     "bluebird": "^3.5.0",
     "noble": "^1.8.1",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "usb-detection": "^1.4.0"
   }
 }
