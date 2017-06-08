@@ -28,7 +28,7 @@
     position: absolute;
     width: 100px;
     height: 50px;
-    top: 75px;
+    top: 10px;
     left: 0px;
     background-color: var(--diagnostics-trigger-color);
     border-top-right-radius: 5px;
@@ -107,6 +107,62 @@
     font-weight: bold;
     align-items: center;
     justify-content: center;    
+}
+
+.ble-info-message {
+    font-size: 14px;
+}
+
+.jlink-info-message {
+    font-size: 14px;
+}
+
+.ble-info-status.error {
+    --before-background: red;
+}
+
+.ble-info-status.success {
+    --before-background: green;
+}
+
+.ble-info-status {
+    --before-background: white;
+}
+
+.jlink-info-status.error {
+    --before-background: red;
+}
+
+.jlink-info-status.success {
+    --before-background: green;
+}
+
+.jlink-info-status {
+    --before-background: white;
+}
+
+.ble-info-status:before { 
+    content: ' \2688';
+    font-size: 24px;
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: rgba(255,255,255,0);
+    background: var(--before-background);
+}
+
+.jlink-info-status:before {  
+    content: ' \2688';
+    font-size: 24px;
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: rgba(255,255,255,0);
+    background: var(--before-background);
 }
 
 .diagnostics-name a, .diagnostics-result a, .diagnostics-info a {

@@ -6,8 +6,9 @@ import * as Promise from 'bluebird';
 import { workbenchAction, workbench } from '../workbench'
 import { activity, activitybar } from '../../activitybar/activitybar'
 import * as noble from 'noble'
+import { statusInfo, registerStatusInfo } from '../../statusbar/statusbar'
 import { messageHandle, writeMessage } from '../message'
-
+import * as usbDetect from 'usb-detection';
 
 loadstyle(path.join(__dirname, './media/diagnostics.css'));
 
@@ -24,6 +25,16 @@ interface componentLayoutInfo {
     statusbar: { height: number; };
 }
 
+// var refDevicetimeoutTimer: NodeJS.Timer;
+
+// const refDevicetimeout = 5000;
+
+const jlinkConnectionCheckPeriod = 10000;
+var jlinkConnectionCheckPeriodTimer;
+
+const refDeviceConnectionCheckPeriod = 20000;
+var refDeviceConnectionCheckPeriodTimer;
+
 const diagnosticsTimeout = 20000;
 var diagnosticsTimeoutTimer;
 
@@ -34,7 +45,6 @@ const diagnosticsFrequency = 1000;
 const serviceUUID = '6612';
 
 const refDeviceTimeout = 10000;
-
 var refDeviceTimeoutTimer;
 
 const refDeviceMacID = 'ec:ef:14:ea:9a:13';
@@ -98,6 +108,8 @@ const temperatureThres = 2;
 const ambientThres = 10;
 var serviceDataValid = false;
 
+var jlinkConnectionFlag = false;
+
 var serviceData = {
     temperature: 0,
     humidity: 0,
@@ -109,12 +121,58 @@ var diagnosticsTimer: NodeJS.Timer;
 var diagnosticsMemLocation = "2000E3DB"; 						// May subject to change. create a config json file if possible
 var sizeofDiagnosticsData = '40'; 								// May subject to change. create a config json file if possible
 
+var _diagnosticsTrigger = false;
+
+function diagnosticsTrigger(val?: boolean): boolean {
+
+    if (typeof val !== 'undefined') {
+        _diagnosticsTrigger = val;
+    } else {
+        return _diagnosticsTrigger;
+    }
+
+    var element = document.getElementsByClassName('start-diagnostics');
+    var elementContainer = document.getElementsByClassName('diagnostics-action-container');
+
+    console.log('diagnostics trigger flag is ', _diagnosticsTrigger);
+
+    console.log(element.item(0));
+    console.log(element);
+
+
+    if ((element.length == 0) || (elementContainer.length == 0)) {
+        console.error('diagnostics is not installed properly');
+        return val;
+    }
+
+    if (_diagnosticsTrigger) {
+        console.log('setting diagnostics trigger');
+
+        quickDom(element.item(0)).removeClass('diagnostics-not-started');
+        quickDom(element.item(0)).addClass('diagnostics-started');
+
+        quickDom(element.item(0)).getHTMLElement().firstElementChild.innerHTML = 'Stop Diagnostics';
+        quickDom(elementContainer.item(0)).removeClass('idle');
+        quickDom(elementContainer.item(0)).addClass('progress');
+    } else {
+        quickDom(element.item(0)).removeClass('diagnostics-started');
+        quickDom(element.item(0)).addClass('diagnostics-not-started');
+        quickDom(element.item(0)).getHTMLElement().firstElementChild.innerHTML = 'Start Diagnostics'
+        quickDom(elementContainer.item(0)).removeClass('progress');
+
+    }
+
+    console.log('diagnostics is triggered');
+    return val;
+}
+
 var Enum = {													// May subject to change. create a config json file if possible
     AmbientlightValue: 39,
     ramDiagnosticTest: 41,
     spiFlashDiagnosticTest: 42,
     diagnosticsCompleteFlag: 43,
 }
+
 
 // var diagnosticsData = {
 // 	_AccXaxisSelftest 			: {offset: 0, value: 0},
@@ -188,72 +246,41 @@ export class diagnosticsContent {
         this.content.contentContainer.addClass('idle');
         // this.content.contentContainer.getHTMLElement().innerHTML = contentName;
 
-        noble.on('stateChange', state => {
-            if (state === 'poweredOn') {
-                //   console.log('Scanning for devices');
-                noble.startScanning([], true);
-            } else {
-                noble.stopScanning();
-            }
-        });
+    }
+    diagnosticsname(name: string) {
+        this.content.testName = name;
+        if (!this.content.nameContainer.getHTMLElement().hasChildNodes()) {
+            console.log('creating child');
+            var a = emptyDom().element('a', '');
+        } else {
+            var a = quickDom(this.content.nameContainer.getHTMLElement().firstElementChild);
+        }
+        a.apendTo(this.content.nameContainer);
+        a.getHTMLElement().innerHTML = this.content.testName;
+    }
 
-        noble.on('discover', periperal => {
-            // console.log('discovered ' + periperal.advertisement.localName);
-            // console.log('discovered ' + periperal.address);
-            if (typeof periperal.advertisement.localName == 'undefined') {
-                return;
-            }
-            // else if ((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
-            else if (periperal.address !== refDeviceMacID) {
-                return;
-            }
-            console.log(periperal.address);
-            // console.log('device name is ' + periperal.advertisement.localName);
-            // console.log(periperal.advertisement.serviceData[0].data);
-            for (var prop in serviceDataOffset) {
-                serviceData[prop] = getTypedData(periperal.advertisement.serviceData[0].data, serviceDataOffset[prop].offset, serviceDataOffset[prop].type);
-                if (prop === 'temperature') {
-                    serviceData[prop] = serviceData[prop] / 10;
-                    // console.log('temperature value = ' + serviceData[prop]);
-                }
-            }
-            serviceDataValid = true;
-        });
-}
-diagnosticsname(name: string) {
-    this.content.testName = name;
-    if (!this.content.nameContainer.getHTMLElement().hasChildNodes()) {
-        console.log('creating child');
-        var a = emptyDom().element('a', '');
-    } else {
-        var a = quickDom(this.content.nameContainer.getHTMLElement().firstElementChild);
+    diagnosticsinfo(info: string) {
+        this.content.info = info;
+        if (!this.content.infoContainer.getHTMLElement().hasChildNodes()) {
+            console.log('creating child');
+            var a = emptyDom().element('a', '');
+        } else {
+            var a = quickDom(this.content.infoContainer.getHTMLElement().firstElementChild);
+        }
+        a.apendTo(this.content.infoContainer);
+        a.getHTMLElement().innerHTML = this.content.info;
     }
-    a.apendTo(this.content.nameContainer);
-    a.getHTMLElement().innerHTML = this.content.testName;
-}
-
-diagnosticsinfo(info: string) {
-    this.content.info = info;
-    if (!this.content.infoContainer.getHTMLElement().hasChildNodes()) {
-        console.log('creating child');
-        var a = emptyDom().element('a', '');
-    } else {
-        var a = quickDom(this.content.infoContainer.getHTMLElement().firstElementChild);
+    diagnosticsresult(result: string) {
+        this.content.Result = result;
+        if (!this.content.resultContainer.getHTMLElement().hasChildNodes()) {
+            console.log('creating child');
+            var a = emptyDom().element('a', '');
+        } else {
+            var a = quickDom(this.content.resultContainer.getHTMLElement().firstElementChild);
+        }
+        a.apendTo(this.content.resultContainer);
+        a.getHTMLElement().innerHTML = this.content.Result;
     }
-    a.apendTo(this.content.infoContainer);
-    a.getHTMLElement().innerHTML = this.content.info;
-}
-diagnosticsresult(result: string) {
-    this.content.Result = result;
-    if (!this.content.resultContainer.getHTMLElement().hasChildNodes()) {
-        console.log('creating child');
-        var a = emptyDom().element('a', '');
-    } else {
-        var a = quickDom(this.content.resultContainer.getHTMLElement().firstElementChild);
-    }
-    a.apendTo(this.content.resultContainer);
-    a.getHTMLElement().innerHTML = this.content.Result;
-}
 }
 
 // interface temperatureSensorResult {
@@ -294,45 +321,33 @@ function diagnosticsCb() {
 
 }
 
+function checkJLink() {
+    jlink.checkJLinkConnection().then(result => {
+        console.log('JLink connection is present');
+        jlinkConnectionFlag = true;
+        setJLinkStatusMsg('info', 'Debugger is connected');
+    }).catch((e) => {
+        console.warn('jlink connection is not there');
+        jlinkConnectionFlag = false;
+        setJLinkStatusMsg('error', 'Debugger is not connected');
+    })
+}
+
+
 export class diagnostics extends workbenchAction {
     public temperatureResult: diagnosticsResultContainer;
     public ambientLightResult: diagnosticsResultContainer;
     public _9axisResult: diagnosticsResultContainer;
+    public humidityResult: diagnosticsResultContainer;
 
     diagnosticsActionElement: dom;
     startDiagnosticsContainer: dom;
 
     private action: workbenchAction;
     private activity: activity;
-    private jlinkStatus: dom;
-    private bleStatus: dom;
+    private jlinkStatus: statusInfo;
+    private bleStatus: statusInfo;
 
-    private _diagnosticsTrigger: boolean;
-
-    set diagnosticsTrigger(val: boolean) {
-        this._diagnosticsTrigger = val;
-
-        console.log('setting diagnostics trigger');
-
-        if (this._diagnosticsTrigger) {
-            this.startDiagnosticsContainer.removeClass('diagnostics-not-started');
-            this.startDiagnosticsContainer.addClass('diagnostics-started');
-
-            this.startDiagnosticsContainer.getHTMLElement().firstElementChild.innerHTML = 'Stop Diagnostics';
-            this.diagnosticsActionElement.removeClass('idle');
-            this.diagnosticsActionElement.addClass('progress');
-        } else {
-            this.startDiagnosticsContainer.removeClass('diagnostics-started');
-            this.startDiagnosticsContainer.addClass('diagnostics-not-started');
-            this.startDiagnosticsContainer.getHTMLElement().firstElementChild.innerHTML = 'Start Diagnostics'
-            this.diagnosticsActionElement.removeClass('progress');
-
-        }
-    }
-
-    get diagnosticsTrigger() {
-        return this._diagnosticsTrigger;
-    }
 
     constructor(activitybar: activitybar, workbench: workbench) {
         super('Diagnostics', emptyDom().element('div', 'diagnostics-action'));
@@ -341,28 +356,44 @@ export class diagnostics extends workbenchAction {
 
         this.diagnosticsActionElement = emptyDom().element('div', 'diagnostics-action-container');
         this.diagnosticsActionElement.apendTo(this.actionElement);
+
+
         console.log('adding class');
         this.diagnosticsActionElement.addClass('idle');
 
         this.startDiagnosticsContainer = emptyDom().element('div', 'start-diagnostics');
         this.startDiagnosticsContainer.apendTo(this.actionElement);
 
-
+        this.startDiagnosticsContainer.addClass('diagnostics-not-started');
         emptyDom().element('a', '').apendTo(this.startDiagnosticsContainer);
 
-        this.diagnosticsTrigger = false;
+        if (this.startDiagnosticsContainer.getHTMLElement().firstElementChild !== null) {
+            this.startDiagnosticsContainer.getHTMLElement().firstElementChild.innerHTML = 'Start Diagnostics';
+        }
+
+
+        // this.diagnosticsTrigger = false;
+
+        diagnosticsTrigger(false);
 
         this.startDiagnosticsContainer.on('click', (e: Event) => {
 
-            console.log("Entered start diagnostics" + this.diagnosticsTrigger);
-            this.diagnosticsTrigger = this.diagnosticsTrigger ? false : true;
-            if (this.diagnosticsTrigger) {
+            console.log("Entered start diagnostics " + diagnosticsTrigger());
+            diagnosticsTrigger(diagnosticsTrigger() ? false : true);
+            if (diagnosticsTrigger()) {
+                console.log('Starting the diagnostics');
                 startDiagnostics().then((data) => {
+                    console.log('diagnostics complete');
                     this.renderData(data);
-                    this.diagnosticsTrigger = false;
-                })
+                    diagnosticsTrigger(false);
+                }).catch(e => {
+                    diagnosticsTrigger(false);
+                    console.error('diagnostics failed');
+                    writeMessage('error', (<Error>e).message);
+                });
             } else {
                 stopDiagnostics();
+                diagnosticsTrigger(false);
             }
         })
 
@@ -375,22 +406,91 @@ export class diagnostics extends workbenchAction {
         // Create a activity
         this.activity = activitybar.addActivity('diagnostics', this.action, this, diagnosticsCb);
 
-        this.temperatureResult = this.addDiagnosticsResult('TH sensor');
+        this.temperatureResult = this.addDiagnosticsResult('Temperature sensor');
         this.ambientLightResult = this.addDiagnosticsResult('Ambient sensor')
         this._9axisResult = this.addDiagnosticsResult('9-axis sensor');
- 
+        this.humidityResult = this.addDiagnosticsResult('Humidity sensor');
+
         // add the status info in statusbar
         this.statusInfoLayout();
+
+        setbleStatusMsg('error', 'Reference Device Disconnected');
+        setJLinkStatusMsg('error', 'Debugger is not connected');
+        checkJLink();
+        jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
+
+        noble.on('stateChange', state => {
+            if (state === 'poweredOn') {
+                //   console.log('Scanning for devices');
+                noble.startScanning([], true);
+            } else {
+                noble.stopScanning();
+            }
+        });
+
+        noble.on('discover', periperal => {
+            // console.log('discovered ' + periperal.advertisement.localName);
+            // console.log('discovered ' + periperal.address);
+            if (typeof periperal.advertisement.localName == 'undefined') {
+                return;
+            }
+            // else if ((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
+            else if (periperal.address !== refDeviceMacID) {
+                return;
+            }
+            console.log(periperal.address);
+
+            if (typeof refDeviceConnectionCheckPeriodTimer !== 'undefined') {
+                clearTimeout(refDeviceConnectionCheckPeriodTimer);
+            }
+            // console.log('device name is ' + periperal.advertisement.localName);
+            // console.log(periperal.advertisement.serviceData[0].data);
+            for (var prop in serviceDataOffset) {
+                serviceData[prop] = getTypedData(periperal.advertisement.serviceData[0].data, serviceDataOffset[prop].offset, serviceDataOffset[prop].type);
+                if (prop === 'temperature') {
+                    serviceData[prop] = serviceData[prop] / 10;
+                    // console.log('temperature value = ' + serviceData[prop]);
+                }
+            }
+            serviceDataValid = true;
+            setbleStatusMsg('info', 'Reference device Connected');
+
+            refDeviceConnectionCheckPeriodTimer = setTimeout(() => {
+                serviceDataValid = false;
+                setbleStatusMsg('error', 'Reference device Disconnected');
+            }, refDeviceConnectionCheckPeriod);
+        });
+        // refDeviceConnectionCheckPeriodTimer = setInterval(checkrefDeviceConnection(), refDeviceConnectionCheckPeriod);
+
+        // Check wether JLink is connected or not
+        usbDetect.on('add', checkJLink);
+
+        usbDetect.on('remove', checkJLink);
+
     }
 
     statusInfoLayout() {
-        this.jlinkStatus = registerStatusInfo('jlink');
-        this.bleStatus = registerStatusInfo('ble');
+        var temp = registerStatusInfo('jlink');
+        if (temp !== null) {
+            this.jlinkStatus = temp;
+        }
+        temp = registerStatusInfo('ble');
+        if (temp !== null) {
+            this.bleStatus = temp;
+        }
 
-        var jlinkinfo = emptyDom().element('div', 'jlink-info');
-        jlinkinfo.apendTo(this.jlinkStatus);
+        var jlinkinfo = emptyDom().element('div', 'jlink-info-message');
+        jlinkinfo.apendTo(this.jlinkStatus.element);
 
-        setJLinkStatus(status: string);
+        jlinkinfo = emptyDom().element('div', 'jlink-info-status');
+        jlinkinfo.apendTo(this.jlinkStatus.element);
+
+        var bleinfo = emptyDom().element('div', 'ble-info-message');
+        bleinfo.apendTo(this.bleStatus.element);
+
+        bleinfo = emptyDom().element('div', 'ble-info-status');
+        bleinfo.apendTo(this.bleStatus.element);
+
 
     }
 
@@ -404,7 +504,6 @@ export class diagnostics extends workbenchAction {
     renderData(result) {
 
         if (serviceDataValid == false) {
-            // setTimeout(() => startDiagnostics(result.context).then(handleDiagnostics), diagnosticsFrequency);
             writeMessage('error', 'Reference device is not present...')
             return;
         }
@@ -507,6 +606,11 @@ export class diagnostics extends workbenchAction {
     }
 }
 
+// function checkjlinkConnection() {
+
+
+// }
+
 function parserDiagnosticsData(diagnosticsBuffer) {
     // Validate the argument ???
 
@@ -516,25 +620,110 @@ function parserDiagnosticsData(diagnosticsBuffer) {
 
 }
 
-export function startDiagnostics(userData?: any) {
+function setJLinkStatusMsg(sevearity: string, msg: string) {
+    var jlinkInfo = document.querySelectorAll('div .jlink-info-message');
+    var circle = document.querySelectorAll('.jlink-info-status');
+    if (!jlinkInfo) {
+        console.error('jlink info is not registered');
+        return;
+    }
+    (<HTMLElement>jlinkInfo.item(0)).innerText = msg;
+
+    if (sevearity == 'error') {
+        (<HTMLElement>jlinkInfo.item(0)).style.color = 'orange';
+        if (circle) {
+            (<HTMLElement>circle.item(0)).classList.remove('success');
+            (<HTMLElement>circle.item(0)).classList.add('error');
+            // (<HTMLElement>circle.item(0)).style.color = 'red';
+        }
+    } else if (sevearity == 'info') {
+        (<HTMLElement>jlinkInfo.item(0)).style.color = '#FFFFFF';
+        if (circle) {
+            (<HTMLElement>circle.item(0)).classList.remove('error');
+            // (<HTMLElement>circle.item(0)).style.color = 'green';
+            (<HTMLElement>circle.item(0)).classList.add('success');            
+        }
+    }
+}
+
+function setbleStatusMsg(sevearity: string, msg: string) {
+    var bleInfo = document.querySelectorAll('div .ble-info-message');
+    var circle = document.querySelectorAll('.ble-info-status');
+    if (!bleInfo) {
+        console.error('ble info is not registered');
+        return;
+    }
+    (<HTMLElement>bleInfo.item(0)).innerText = msg;
+
+    if (sevearity == 'error') {
+        (<HTMLElement>bleInfo.item(0)).style.color = 'orange';
+        if (circle) {
+            // (<HTMLElement>circle.item(0)).style.color = 'red';
+            (<HTMLElement>circle.item(0)).classList.add('error');
+            (<HTMLElement>circle.item(0)).classList.remove('success');
+        }
+    } else if (sevearity == 'info') {
+        (<HTMLElement>bleInfo.item(0)).style.color = '#FFFFFF';
+        if (circle) {
+            // (<HTMLElement>circle.item(0)).style.color = 'green';
+            (<HTMLElement>circle.item(0)).classList.remove('error');
+            (<HTMLElement>circle.item(0)).classList.add('success');
+        }
+    }
+}
+
+function setJLinkStatus(status: string) {
+    var jlinkInfo = document.querySelectorAll('div .jlink-info-status');
+    if (!jlinkInfo) {
+        console.error('jlink info is not registered');
+        return;
+    }
+
+}
+
+export function startDiagnostics(userData?: any): Promise {
 
     // Check weather Reference device is present
 
+    clearInterval(jlinkConnectionCheckPeriodTimer);
+
+    if (jlinkConnectionFlag == false) {
+        writeMessage('error', 'JLink debugger is not connected...');
+        jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
+        return new Promise((r, e) => {
+            e(new Error('JLink debugger is not connected...'));
+        })
+    }
+
+    if (serviceDataValid == false) {
+        writeMessage('error', 'Reference device is not present...');
+        jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
+
+        return new Promise((r, e) => {
+            e(new Error('Reference device is not present...'));
+        })
+    }
+
     // Establish JLink connection
-    jlink.configureJlink("/opt/SEGGER/JLink/JLinkExe", "-device NRF52 -if SWD -speed 4000");
+    // jlink.configureJlink("/opt/SEGGER/JLink/JLinkExe", "-device NRF52 -if SWD -speed 4000");
     var context = userData;
-    jlinkConnectionTimeoutTimer = setTimeout(() => {
-        stopDiagnostics();
-        writeMessage('error', 'JLink debugger connection timeout occured');
-    }, jlinkConnectionTimeout);
+
     return new Promise((r, e) => {
+
+        jlinkConnectionTimeoutTimer = setTimeout(() => {
+            e(new Error('JLink debugger connection timeout occured'));
+        }, jlinkConnectionTimeout);
+
         jlink.startJLinkServer().then(result => {
             clearTimeout(jlinkConnectionTimeoutTimer);
             process.stdout.write("Waiting for diagnostics to complete");
 
             diagnosticsTimeoutTimer = setTimeout(() => {
-                stopDiagnostics();
-                writeMessage('error', 'Diagnostics completion timeout occured');
+                // stopDiagnostics();
+                // diagnosticsTrigger(false);
+                clearInterval(diagnosticsTimer);
+                e('Diagnostics completion timeout occured');
+                // writeMessage('error', 'Diagnostics completion timeout occured');
             }, diagnosticsTimeout);
 
             diagnosticsTimer = setInterval(() => {
@@ -554,6 +743,11 @@ export function startDiagnostics(userData?: any) {
                     else {
                         process.stdout.write('.');
                     }
+                }).catch((err) => {
+                    // writeMessage('error', message);
+                    clearInterval(diagnosticsTimer);
+                    clearInterval(diagnosticsTimeoutTimer);
+                    e(err);
                 });
             }, 1000);
         });
@@ -564,4 +758,5 @@ function stopDiagnostics() {
     clearTimeout(diagnosticsTimeoutTimer);
     clearTimeout(jlinkConnectionTimeoutTimer);
     clearInterval(diagnosticsTimer);
+    jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
 }
