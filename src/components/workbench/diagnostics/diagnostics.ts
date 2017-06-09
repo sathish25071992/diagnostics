@@ -7,7 +7,8 @@ import { workbenchAction, workbench } from '../workbench'
 import { activity, activitybar } from '../../activitybar/activitybar'
 import { statusInfo, registerStatusInfo } from '../../statusbar/statusbar'
 import { messageHandle, writeMessage } from '../message'
-//import * as usbDetect from 'usb-detection';
+import { config } from '../configuration/configuration'
+import * as usbDetect from 'usb-detection';
 
 loadstyle(path.join(__dirname, './media/diagnostics.css'));
 
@@ -46,7 +47,6 @@ const serviceUUID = '6612';
 const refDeviceTimeout = 10000;
 var refDeviceTimeoutTimer;
 
-const refDeviceMacID = 'ec:ef:14:ea:9a:13';
 
 const serviceDataOffset = {
     temperature: { offset: 0, type: 'int16_t' },
@@ -233,11 +233,12 @@ function bluetoothStart() {
     noble.on('discover', periperal => {
         // console.log('discovered ' + periperal.advertisement.localName);
         // console.log('discovered ' + periperal.address);
+        console.log('searching for the mac ID', config["Reference device Mac ID"]);
         if (typeof periperal.advertisement.localName == 'undefined') {
             return;
         }
         // else if ((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
-        else if (periperal.address !== refDeviceMacID) {
+        else if (periperal.address !== config["Reference device Mac ID"]) {
             return;
         }
         console.log(periperal.address);
@@ -461,14 +462,16 @@ export class diagnostics extends workbenchAction {
         setJLinkStatusMsg('error', 'Debugger is not connected');
         checkJLink();
         jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
-        
-        // bluetoothStart();
+
+        bluetoothStart();
         // refDeviceConnectionCheckPeriodTimer = setInterval(checkrefDeviceConnection(), refDeviceConnectionCheckPeriod);
 
         // Check wether JLink is connected or not
-        // usbDetect.on('add', checkJLink);
+        var usbDetect = require('usb-detection');
 
-        // usbDetect.on('remove', checkJLink);
+        usbDetect.on('add', checkJLink);
+
+        usbDetect.on('remove', checkJLink);
 
     }
 
@@ -504,27 +507,18 @@ export class diagnostics extends workbenchAction {
         return result;
     }
 
-    renderData(result) {
-
-        if (serviceDataValid == false) {
-            writeMessage('error', 'Reference device is not present...')
-            return;
-        }
-        console.log(result.diagnosticsData);
-        // Check condition for THA verification
+    renderTemperature(result) {
         result.diagnosticsData.temperatureValue = result.diagnosticsData.temperatureValue / 10;
 
         var info = 'Temperaure value = ' + (result.diagnosticsData.temperatureValue) + '\r\n';
-        info = info + 'Humidity value value = ' + result.diagnosticsData.humidityValue + '\r\n';
 
         info = info + 'reference device Temperaure value = ' + (serviceData.temperature) + '\r\n';
-        info = info + 'reference device Humidity value value = ' + serviceData.humidity;
 
         this.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('idle');
         this.temperatureResult.diagnosticsContent.diagnosticsinfo(info);
 
-        if (((result.diagnosticsData.temperatureValue - temperatureThres) >= serviceData.temperature) ||
-            ((result.diagnosticsData.temperatureValue + temperatureThres) <= serviceData.temperature)) {
+        if (((result.diagnosticsData.temperatureValue - config["Temperature tolerance"]) >= serviceData.temperature) ||
+            ((result.diagnosticsData.temperatureValue + config["Temperature tolerance"]) <= serviceData.temperature)) {
             this.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('failed');
             this.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('success');
             this.temperatureResult.diagnosticsContent.diagnosticsresult('Failed');
@@ -535,6 +529,32 @@ export class diagnostics extends workbenchAction {
             this.temperatureResult.diagnosticsContent.diagnosticsresult('Success');
             this.temperatureResult.diagnosticsContent.content.contentContainer.addClass('success');
         }
+    }
+
+    renderHumidity(result) {
+
+        var info = 'Humidity value value = ' + result.diagnosticsData.humidityValue + '\r\n';
+        info = info + 'reference device Humidity value value = ' + serviceData.humidity;
+
+        this.humidityResult.diagnosticsContent.content.contentContainer.removeClass('idle');
+        this.humidityResult.diagnosticsContent.diagnosticsinfo(info);
+
+        if (((result.diagnosticsData.humidityValue - config["Humidity tolerence"]) >= serviceData.humidity) ||
+            ((result.diagnosticsData.humidityValue + config["Humidity tolerence"]) <= serviceData.humidity)) {
+            this.humidityResult.diagnosticsContent.content.contentContainer.removeClass('failed');
+            this.humidityResult.diagnosticsContent.content.contentContainer.removeClass('success');
+            this.humidityResult.diagnosticsContent.diagnosticsresult('Failed');
+            this.humidityResult.diagnosticsContent.content.contentContainer.addClass('failed');
+        } else {
+            this.humidityResult.diagnosticsContent.content.contentContainer.removeClass('failed');
+            this.humidityResult.diagnosticsContent.content.contentContainer.removeClass('success');
+            this.humidityResult.diagnosticsContent.diagnosticsresult('Success');
+            this.humidityResult.diagnosticsContent.content.contentContainer.addClass('success');
+        }
+
+    }
+
+    renderAmbientLight(result) {
 
         var info = 'Ambient light value = ' + (result.diagnosticsData.AmbientlightValue) + '\r\n';
         info = info + 'reference device data = ' + serviceData.ambientLight;
@@ -542,8 +562,8 @@ export class diagnostics extends workbenchAction {
         this.ambientLightResult.diagnosticsContent.content.contentContainer.removeClass('idle');
         this.ambientLightResult.diagnosticsContent.diagnosticsinfo(info);
 
-        if (((result.diagnosticsData.AmbientlightValue - ambientThres) >= (serviceData.ambientLight)) ||
-            ((result.diagnosticsData.AmbientlightValue + ambientThres) <= (serviceData.ambientLight))) {
+        if (((result.diagnosticsData.AmbientlightValue - config["AmbientLignt tolerence"]) >= (serviceData.ambientLight)) ||
+            ((result.diagnosticsData.AmbientlightValue + config["AmbientLignt tolerence"]) <= (serviceData.ambientLight))) {
             this.ambientLightResult.diagnosticsContent.content.contentContainer.removeClass('failed');
             this.ambientLightResult.diagnosticsContent.content.contentContainer.removeClass('success');
             this.ambientLightResult.diagnosticsContent.diagnosticsresult('Failed');
@@ -555,6 +575,10 @@ export class diagnostics extends workbenchAction {
             this.ambientLightResult.diagnosticsContent.content.contentContainer.addClass('success');
 
         }
+
+    }
+
+    render9Axis(result) {
 
         var info = '9-axis value = ' + (result.diagnosticsData.AccXData.toFixed(3));
 
@@ -574,6 +598,22 @@ export class diagnostics extends workbenchAction {
             this._9axisResult.diagnosticsContent.diagnosticsresult('Success');
             this._9axisResult.diagnosticsContent.content.contentContainer.addClass('success');
         }
+
+    }
+
+    renderData(result) {
+
+        if (serviceDataValid == false) {
+            writeMessage('error', 'Reference device is not present...')
+            return;
+        }
+        console.log(result.diagnosticsData);
+        // Check condition for THA verification
+
+        this.renderTemperature(result);
+        this.renderHumidity(result);
+        this.renderAmbientLight(result);
+        this.render9Axis(result);
 
         console.log("Diagnostics is complete!!!");
     }

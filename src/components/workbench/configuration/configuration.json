@@ -1,0 +1,7 @@
+{
+	"Reference device Mac ID": "11:22:33:44:55:66",
+	"Temperature tolerance": "2",
+	"Humidity tolerence": "2",
+	"AmbientLignt tolerence": "2",
+	"9-axis tolarence": "10%"
+}

@@ -5,6 +5,7 @@ import { workbench } from '../components/workbench/workbench'
 import { Dimension } from './util'
 import { diagnostics, startDiagnostics } from '../components/workbench/diagnostics/diagnostics'
 import { flash } from '../components/workbench/flash/flash'
+import { configuration } from '../components/workbench/configuration/configuration'
 
 import { component } from '../components/component'
 //import * as noble from 'noble'
@@ -168,6 +169,7 @@ export class workspace {
 	private componentInfo: componentLayoutInfo;
 	public diagnostics: diagnostics;
 	public flash: flash;
+	public configuration: configuration;
 
 	private statusBarHeight: number;
 	private activityBarWidth: number;
@@ -247,8 +249,10 @@ export class workspace {
 
 			// Creating diagnostics Action.
 
-			this.diagnostics = new diagnostics(this.activitybar, this.workbench);
+
+			this.configuration = new configuration(this.activitybar, this.workbench);
 			this.flash = new flash(this.activitybar, this.workbench);
+			this.diagnostics = new diagnostics(this.activitybar, this.workbench);
 
 			// Add workbenchaction to workbench
 

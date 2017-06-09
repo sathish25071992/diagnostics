@@ -1,0 +1,170 @@
+.configuration-action {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.configuration-container {
+	width: calc(100% - 60px);
+	height: calc(100% - 60px);
+    display: flex;
+    flex-direction: row;	
+	overflow: auto;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+	justify-content: center;
+	margin: 30px;
+}
+
+.configuration-container-left {
+	width: 100%;
+	height: 100%;
+	min-width: 350px;
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: rgba(0,0,0,0.2);
+}
+
+.configuration-container-right {
+	width: 100%;
+	height: 100%;
+	min-width: 350px;
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.configuration-userInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	width: 330px;
+	margin: 45px;
+}
+
+.configuration-user-input {
+	height: 25px;
+	color: black;
+}
+
+.configuration-user-input.error {
+	color:red;
+}
+
+
+.configuration-separator {
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.buttons-container {
+	height: 100px;
+	width: calc(100% - 100px);
+
+	border-top-color: rgba(0,0,0,0.2);
+	border-top-style: solid;
+	border-top-width: 2px;
+	margin-left: 50px;
+	margin-right: 50px;
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.save-button {
+    height: calc(100% - 60px);
+    width: calc(150px - 60px);
+    display: flex;
+    margin: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	align-items: center;
+	cursor: pointer
+}
+
+.save-button .save {
+	height: 50px;
+	width: 100px;
+	background-color: rgba(0, 122, 204, 1);
+	border-radius: 20px;
+	border-color: rgba(0,0,0,0.3);
+	border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+}
+
+.save-button .save:before {
+	content: "Save";
+	color: white
+}
+
+.reset-button {
+    height: calc(100% - 60px);
+    width: calc(150px - 60px);
+    display: flex;
+    margin: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	align-items: center;
+	cursor: pointer
+	
+}
+
+.reset-button .reset {
+	height: 50px;
+	width: 100px;
+	background-color: rgba(0, 122, 204, 1);
+	border-radius: 20px;
+	border-color: rgba(0,0,0,0.3);
+	border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+}
+
+.reset-button .reset:before {
+	color: white;
+	content: "Reset"
+}
+
+.cancel-button {
+    height: calc(100% - 60px);
+    width: calc(150px - 60px);
+    display: flex;
+    margin: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	align-items: center;
+	cursor: pointer
+}
+
+.cancel-button .cancel {
+	height: 50px;
+	width: 100px;
+	background-color: rgba(0, 122, 204, 1);
+	border-radius: 20px;
+	border-color: rgba(0,0,0,0.3);
+	border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+}
+
+.cancel-button .cancel:before {
+	color: white;
+	content: "Cancel"
+}
