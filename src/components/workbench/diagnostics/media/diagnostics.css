@@ -145,7 +145,7 @@
     content: ' \2688';
     font-size: 24px;
     width: calc(100% - 5px);
-    height: calc(100% - 5px);
+    height: calc(100% - 7px);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -155,9 +155,9 @@
 
 .jlink-info-status:before {  
     content: ' \2688';
-    font-size: 24px;
+    font-size: 23px;
     width: calc(100% - 5px);
-    height: calc(100% - 5px);
+    height: calc(100% - 7px);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
