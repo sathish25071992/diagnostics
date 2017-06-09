@@ -10,7 +10,11 @@ import { messageHandle, writeMessage } from '../message'
 
 const defaultConfig = require('./configuration.json');
 
-export var config = JSON.parse(JSON.stringify(defaultConfig));
+export var config = {};
+
+for(let entry in defaultConfig) {
+	config[entry] = defaultConfig[entry].value;
+}
 
 var alignFlag = true;
 
@@ -126,7 +130,7 @@ export class configuration extends workbenchAction {
 		config.apendTo(container);
 
 		config.getHTMLElement().id = name;
-		// (<HTMLInputElement>config.getHTMLElement()).value = value;
+		(<HTMLInputElement>config.getHTMLElement()).value = value;
 
 
 	}

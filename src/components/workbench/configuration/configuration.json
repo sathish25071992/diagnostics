@@ -1,7 +1,22 @@
 {
-	"Reference device Mac ID": "11:22:33:44:55:66",
-	"Temperature tolerance": "2",
-	"Humidity tolerence": "2",
-	"AmbientLignt tolerence": "2",
-	"9-axis tolarence": "10%"
+	"Reference device Mac ID": {
+		"value": "11:22:33:44:55:66",
+		"pattern": "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
+		"message": ""
+	},
+	"Temperature tolerance": {
+		"value": "2",
+		"pattern": "[0-9]*$",
+		"message": ""
+	},
+	"Humidity tolerence": {
+		"value": "2",
+		"pattern": "[0-9]*$",
+		"message": ""
+	},
+	"9-axis tolarence": {
+		"value": "2",
+		"pattern": "[0-9]{1-100}$",
+		"message": ""
+	}
 }
