@@ -5,10 +5,9 @@ import * as jlink from '../../../util/jlink';
 import * as Promise from 'bluebird';
 import { workbenchAction, workbench } from '../workbench'
 import { activity, activitybar } from '../../activitybar/activitybar'
-import * as noble from 'noble'
 import { statusInfo, registerStatusInfo } from '../../statusbar/statusbar'
 import { messageHandle, writeMessage } from '../message'
-import * as usbDetect from 'usb-detection';
+//import * as usbDetect from 'usb-detection';
 
 loadstyle(path.join(__dirname, './media/diagnostics.css'));
 
@@ -220,6 +219,50 @@ var diagnosticsData = {
     diagnosticsCompleteFlag: 0,
 };
 
+function bluetoothStart() {
+    const noble = require('noble');
+    noble.on('stateChange', state => {
+        if (state === 'poweredOn') {
+            //   console.log('Scanning for devices');
+            noble.startScanning([], true);
+        } else {
+            noble.stopScanning();
+        }
+    });
+
+    noble.on('discover', periperal => {
+        // console.log('discovered ' + periperal.advertisement.localName);
+        // console.log('discovered ' + periperal.address);
+        if (typeof periperal.advertisement.localName == 'undefined') {
+            return;
+        }
+        // else if ((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
+        else if (periperal.address !== refDeviceMacID) {
+            return;
+        }
+        console.log(periperal.address);
+
+        if (typeof refDeviceConnectionCheckPeriodTimer !== 'undefined') {
+            clearTimeout(refDeviceConnectionCheckPeriodTimer);
+        }
+        // console.log('device name is ' + periperal.advertisement.localName);
+        // console.log(periperal.advertisement.serviceData[0].data);
+        for (var prop in serviceDataOffset) {
+            serviceData[prop] = getTypedData(periperal.advertisement.serviceData[0].data, serviceDataOffset[prop].offset, serviceDataOffset[prop].type);
+            if (prop === 'temperature') {
+                serviceData[prop] = serviceData[prop] / 10;
+                // console.log('temperature value = ' + serviceData[prop]);
+            }
+        }
+        serviceDataValid = true;
+        setbleStatusMsg('info', 'Reference device Connected');
+
+        refDeviceConnectionCheckPeriodTimer = setTimeout(() => {
+            serviceDataValid = false;
+            setbleStatusMsg('error', 'Reference device Disconnected');
+        }, refDeviceConnectionCheckPeriod);
+    });
+}
 
 export class diagnosticsContent {
     content: content;
@@ -418,54 +461,14 @@ export class diagnostics extends workbenchAction {
         setJLinkStatusMsg('error', 'Debugger is not connected');
         checkJLink();
         jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
-
-        noble.on('stateChange', state => {
-            if (state === 'poweredOn') {
-                //   console.log('Scanning for devices');
-                noble.startScanning([], true);
-            } else {
-                noble.stopScanning();
-            }
-        });
-
-        noble.on('discover', periperal => {
-            // console.log('discovered ' + periperal.advertisement.localName);
-            // console.log('discovered ' + periperal.address);
-            if (typeof periperal.advertisement.localName == 'undefined') {
-                return;
-            }
-            // else if ((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
-            else if (periperal.address !== refDeviceMacID) {
-                return;
-            }
-            console.log(periperal.address);
-
-            if (typeof refDeviceConnectionCheckPeriodTimer !== 'undefined') {
-                clearTimeout(refDeviceConnectionCheckPeriodTimer);
-            }
-            // console.log('device name is ' + periperal.advertisement.localName);
-            // console.log(periperal.advertisement.serviceData[0].data);
-            for (var prop in serviceDataOffset) {
-                serviceData[prop] = getTypedData(periperal.advertisement.serviceData[0].data, serviceDataOffset[prop].offset, serviceDataOffset[prop].type);
-                if (prop === 'temperature') {
-                    serviceData[prop] = serviceData[prop] / 10;
-                    // console.log('temperature value = ' + serviceData[prop]);
-                }
-            }
-            serviceDataValid = true;
-            setbleStatusMsg('info', 'Reference device Connected');
-
-            refDeviceConnectionCheckPeriodTimer = setTimeout(() => {
-                serviceDataValid = false;
-                setbleStatusMsg('error', 'Reference device Disconnected');
-            }, refDeviceConnectionCheckPeriod);
-        });
+        
+        // bluetoothStart();
         // refDeviceConnectionCheckPeriodTimer = setInterval(checkrefDeviceConnection(), refDeviceConnectionCheckPeriod);
 
         // Check wether JLink is connected or not
-        usbDetect.on('add', checkJLink);
+        // usbDetect.on('add', checkJLink);
 
-        usbDetect.on('remove', checkJLink);
+        // usbDetect.on('remove', checkJLink);
 
     }
 
@@ -630,7 +633,7 @@ function setJLinkStatusMsg(sevearity: string, msg: string) {
     (<HTMLElement>jlinkInfo.item(0)).innerText = msg;
 
     if (sevearity == 'error') {
-        (<HTMLElement>jlinkInfo.item(0)).style.color = 'orange';
+        (<HTMLElement>jlinkInfo.item(0)).style.color = 'yellow';
         if (circle) {
             (<HTMLElement>circle.item(0)).classList.remove('success');
             (<HTMLElement>circle.item(0)).classList.add('error');
@@ -641,7 +644,7 @@ function setJLinkStatusMsg(sevearity: string, msg: string) {
         if (circle) {
             (<HTMLElement>circle.item(0)).classList.remove('error');
             // (<HTMLElement>circle.item(0)).style.color = 'green';
-            (<HTMLElement>circle.item(0)).classList.add('success');            
+            (<HTMLElement>circle.item(0)).classList.add('success');
         }
     }
 }
@@ -656,7 +659,7 @@ function setbleStatusMsg(sevearity: string, msg: string) {
     (<HTMLElement>bleInfo.item(0)).innerText = msg;
 
     if (sevearity == 'error') {
-        (<HTMLElement>bleInfo.item(0)).style.color = 'orange';
+        (<HTMLElement>bleInfo.item(0)).style.color = 'yellow';
         if (circle) {
             // (<HTMLElement>circle.item(0)).style.color = 'red';
             (<HTMLElement>circle.item(0)).classList.add('error');
