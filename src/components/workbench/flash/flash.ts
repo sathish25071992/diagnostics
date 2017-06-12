@@ -1,18 +1,32 @@
 import { loadstyle } from "../../../load";
 import * as jlink from '../../../util/jlink';
+import * as loader from '../../../util/loader';
 import * as path from 'path'
 loadstyle(path.join(__dirname, './media/flash.css'));
 
+import * as fs from 'fs';
 import { workbench, workbenchAction } from '../workbench'
 import { dom, emptyDom, quickDom } from '../../../dom/dom'
 import { activity, activitybar } from '../../activitybar/activitybar'
 import { messageHandle, writeMessage } from '../message'
+import * as request from 'ajax-request';
 
 
 const { dialog } = require('electron').remote;
 
 function flashCb(act: activity, context: any) {
+	// check for internet connection
 
+	// var dns = require('dns');
+	// dns.lookupService('8.8.8.8', 53, function (err, hostname, service) {
+	// 	console.log(hostname, service);
+	// 	if (err) {
+	// 		console.log('Not connected');
+	// 		writeMessage('warning', 'Please connect to internet to get configuration from server');
+	// 	} else {
+	// 		console.log('connected');
+	// 	}
+	// });
 }
 
 export class flash extends workbenchAction {
@@ -60,27 +74,47 @@ export class flash extends workbenchAction {
 			console.log(data);
 		})
 
-		this.flashTrigger.on('click', (e: Event) => {
+		this.flashTrigger.on('click', async (e: Event) => {
 			var i = 0;
+			if ((typeof this.binaryPath === 'undefined') || (!fs.existsSync(this.binaryPath[0]))) {
+				writeMessage('error', 'Please select a valid file path');
+				return;
+			}
+			// Get cofiguration from server
+			loader.startLoader();
+			try {
+				var deviceInfo = await getDeviceInfo();
+			} catch (err) {
+				console.error('Not able to get the configuration from the server');
+				console.error(err);
+				writeMessage('error', 'Not able to get the configuration from the server');
+				loader.stopLoader();
+				return;
+
+			}
+			console.log(deviceInfo);
+			console.log(deviceInfo[0].MacAddress);
+			// Generate bin file from the configuration got from the server
+
+			// Get binary from the user and join the config bin to the main hex file
+
+			loader.stopLoader();
 			jlink.checkJLinkConnection().then(() => {
+				// Join the hex file and the config bin file
+
 				jlink.flashProgram(this.binaryPath, percent => {
 					console.log(percent);
 					this.setPercentage(percent);
+				}).then(result => {
+					this.setPercentage(0);
+					// Acknowledge the server
 
+				}).catch(e => {
+					writeMessage('error', e.message);
 				});
 			}).catch(e => {
 				writeMessage('error', 'JLink debugger not connected / some-one else using the JLink debugger');
 			});
-
-
-			// var timer = setInterval((x) => {
-			// 	if(i === 10) {
-			// 		clearInterval(timer);
-			// 	}
-			// 	this.setPercentage(i * 10);
-			// 	console.log(i);
-			// 	i++;
-			// }, 500, i);
 		});
 
 	}
@@ -161,5 +195,21 @@ export class flash extends workbenchAction {
 		a.getHTMLElement().innerText = 'Flash not yet started';
 		a.apendTo(this.progress_text);
 	}
+}
 
+function getDeviceInfo(): Promise<any> {
+	return new Promise((r, e) => {
+		request({
+			url: 'http://debug-portal.coolrgroup.com/Controllers/DeviceRawData.ashx?action=getNewDeviceList&asarray=0',
+			method: 'GET',
+			json: true
+		}, (err, res, body) => {
+			if (err) {
+				console.error('Error has happened ' + err);
+				e(err);
+			} else {
+				r(JSON.parse(body));
+			}
+		});
+	});
 }

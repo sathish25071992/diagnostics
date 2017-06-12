@@ -8,7 +8,6 @@ import { activity, activitybar } from '../../activitybar/activitybar'
 import { statusInfo, registerStatusInfo } from '../../statusbar/statusbar'
 import { messageHandle, writeMessage } from '../message'
 import { config } from '../configuration/configuration'
-import * as usbDetect from 'usb-detection';
 
 loadstyle(path.join(__dirname, './media/diagnostics.css'));
 
@@ -102,9 +101,6 @@ export interface content {
 
 }
 
-const humidityThres = 5;
-const temperatureThres = 2;
-const ambientThres = 10;
 var serviceDataValid = false;
 
 var jlinkConnectionFlag = false;
@@ -463,15 +459,15 @@ export class diagnostics extends workbenchAction {
         checkJLink();
         jlinkConnectionCheckPeriodTimer = setInterval(checkJLink, jlinkConnectionCheckPeriod);
 
-        bluetoothStart();
+        // bluetoothStart();
         // refDeviceConnectionCheckPeriodTimer = setInterval(checkrefDeviceConnection(), refDeviceConnectionCheckPeriod);
 
         // Check wether JLink is connected or not
-        var usbDetect = require('usb-detection');
+        // var usbDetect = require('usb-detection');
 
-        usbDetect.on('add', checkJLink);
+        // usbDetect.on('add', checkJLink);
 
-        usbDetect.on('remove', checkJLink);
+        // usbDetect.on('remove', checkJLink);
 
     }
 
@@ -585,19 +581,19 @@ export class diagnostics extends workbenchAction {
         this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('idle');
         this._9axisResult.diagnosticsContent.diagnosticsinfo(info);
 
-        if (((result.diagnosticsData.AmbientlightValue - ambientThres) > (serviceData.ambientLight)) ||
-            ((result.diagnosticsData.AmbientlightValue + ambientThres) < (serviceData.ambientLight))) {
+        // if (((result.diagnosticsData.AmbientlightValue - ambientThres) > (serviceData.ambientLight)) ||
+        //     ((result.diagnosticsData.AmbientlightValue + ambientThres) < (serviceData.ambientLight))) {
 
-            this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('failed');
-            this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('success');
-            this._9axisResult.diagnosticsContent.diagnosticsresult('Failed');
-            this._9axisResult.diagnosticsContent.content.contentContainer.addClass('failed');
-        } else {
-            this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('failed');
-            this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('success');
-            this._9axisResult.diagnosticsContent.diagnosticsresult('Success');
-            this._9axisResult.diagnosticsContent.content.contentContainer.addClass('success');
-        }
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('failed');
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('success');
+        //     this._9axisResult.diagnosticsContent.diagnosticsresult('Failed');
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.addClass('failed');
+        // } else {
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('failed');
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.removeClass('success');
+        //     this._9axisResult.diagnosticsContent.diagnosticsresult('Success');
+        //     this._9axisResult.diagnosticsContent.content.contentContainer.addClass('success');
+        // }
 
     }
 
@@ -627,32 +623,7 @@ export class diagnostics extends workbenchAction {
     diagnosticsComplete() {
 
     }
-
-    private createTableElements(numberofRows: number, numberofColumn: number, parent: dom): [dom[][], dom[]] {
-        var columns: dom[][] = new Array();
-        var rows: dom[] = new Array();
-
-        for (let i = 0; i < numberofRows; i++) {
-            var row = emptyDom().element('tr', 'workbench-row');
-            row.apendTo(parent);
-            rows[i] = row;
-            columns[i] = new Array();
-
-            for (let j = 0; j < numberofColumn; j++) {
-                var column = emptyDom().element('td', 'workbench-column');
-                column.apendTo(row);
-                columns[i][j] = column;
-            }
-        }
-        console.log(columns);
-        return [columns, rows];
-    }
 }
-
-// function checkjlinkConnection() {
-
-
-// }
 
 function parserDiagnosticsData(diagnosticsBuffer) {
     // Validate the argument ???

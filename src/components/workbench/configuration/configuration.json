@@ -2,21 +2,25 @@
 	"Reference device Mac ID": {
 		"value": "11:22:33:44:55:66",
 		"pattern": "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
-		"message": ""
+		"message": "Mac ID should be 6 octet separated by ':' Eg: 10:22:33:44:55:66",
+		"placeholder": "Reference device Mac ID"
 	},
 	"Temperature tolerance": {
 		"value": "2",
-		"pattern": "[0-9]*$",
-		"message": ""
+		"pattern": "^[0-9]$",
+		"message": "Temperature tolerence should not more than 10 degree or less than 0",
+		"placeholder": "Temperature tolerance"
 	},
 	"Humidity tolerence": {
 		"value": "2",
-		"pattern": "[0-9]*$",
-		"message": ""
+		"pattern": "^[0-9]*$",
+		"message": "Humidity tolerence should be a number",
+		"placeholder": "Humidity tolerence"
 	},
-	"9-axis tolarence": {
-		"value": "2",
-		"pattern": "[0-9]{1-100}$",
-		"message": ""
+	"MPU tolarence": {
+		"value": "10",
+		"pattern": "^[0-9][0-9]?$",
+		"message": "9 - axis tolerence should be in percentage. Ex: 1 - 99",
+		"placeholder": "9-axis tolarence"
 	}
 }

@@ -5,15 +5,26 @@
 	flex-direction: column;
 }
 
+.configuration-user-input:invalid {
+	border-color: red;
+	color: red;
+}
+
+.configuration-user-input,
+.configuration-user-input:valid {
+	border-color: green;
+	color: black;
+}
+
 .configuration-container {
-	width: calc(100% - 60px);
-	height: calc(100% - 60px);
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
     display: flex;
     flex-direction: row;	
 	overflow: auto;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
 	justify-content: center;
-	margin: 30px;
+	margin: 10px;
 }
 
 .configuration-container-left {
@@ -29,38 +40,113 @@
 	border-right-color: rgba(0,0,0,0.2);
 }
 
-.configuration-container-right {
+.configuration-form {
 	width: 100%;
 	height: 100%;
-	min-width: 350px;
-	max-width: 400px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
-.configuration-userInput {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-	width: 330px;
+.configuration-entry {
+	position:relative;
 	margin: 45px;
+	display:flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content: center;
 }
 
-.configuration-user-input {
-	height: 25px;
-	color: black;
+.configuration-label-container {
+	width:250px;
+	height: 20px;
 }
 
-.configuration-user-input.error {
-	color:red;
+.configuration-label {
+	position: relative;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif;
+	font-size: 16px;
+	transition:0.2s ease all;
+	margin-right:15px;
+	width:5px;
+	color: #007acc;
 }
 
+.configuration-input {
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	height:25px;
+	width: 250px;
+	transition:0.2s ease all;
+	background-color: rgba(0,0,0,0);
+	text-align: center;
+}
 
-.configuration-separator {
-	margin-left: 20px;
-	margin-right: 10px;
+.configuration-bar {
+	position:absolute;
+	width: 250px;
+	display: block;
+	bottom:0
+}
+
+.configuration-error {
+	position:absolute;
+	max-width: 150px;
+	min-height: 39px;
+	font-size: 12px;
+	color: white;
+	top: 0;
+	background: red;
+	display: block;
+	right: 0px;
+	z-index:-1;
+	opacity:0;
+	transition:0.2s ease all; 
+	border-radius: 5px;
+    /* margin: 0px; */
+    padding: 6px;
+}
+
+.configuration-input:focus {
+  outline: none;
+}
+
+.configuration-bar:before, .configuration-bar:after {
+  content:'';
+  height: 2px;
+  width:0;
+  position:absolute;
+  background: blue;
+  bottom:0;
+  position:absolute;
+  background:#3d8af7; 
+  transition:0.2s ease all; 
+}
+.configuration-bar:before {
+  left:50%;
+}
+.configuration-bar:after {
+  right:50%; 
+}
+.configuration-input:focus ~ .configuration-bar:before, .configuration-input:focus ~ .configuration-bar:after {
+  width:50%;
+}
+
+.configuration-label:after {
+  content:' :'
+}
+
+.configuration-error:after, .configuration-error:before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:21%;
+    left:-12px;
+}
+.configuration-error:after{
+    bottom:30%;
+    background: linear-gradient(to left bottom, red 50%, transparent 50%);
+}
+.configuration-error:before{
+      top:30%;
+    background: linear-gradient(to left top, red 50%, transparent 50%);
 }
 
 .buttons-container {

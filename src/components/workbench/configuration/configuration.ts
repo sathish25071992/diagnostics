@@ -12,11 +12,9 @@ const defaultConfig = require('./configuration.json');
 
 export var config = {};
 
-for(let entry in defaultConfig) {
-	config[entry] = defaultConfig[entry].value;
+for (let entry in defaultConfig) {
+	config[entry.replace(/\s/g, '_')] = defaultConfig[entry].value;
 }
-
-var alignFlag = true;
 
 function configCb() {
 
@@ -27,9 +25,8 @@ export class configuration extends workbenchAction {
 	private configActionElement: dom;
 	private action: workbenchAction;
 	private activity: activity;
-
-	private containerLeft: dom;
-	private containerRight: dom;
+	
+	private form: dom;
 
 	private save: dom;
 	private reset: dom;
@@ -53,7 +50,7 @@ export class configuration extends workbenchAction {
 
 
 		// Create a activity
-		this.activity = activitybar.addActivity('configuration', this.action, this, configCb);
+		this.activity = activitybar.addActivity('configuration', this.action, this, configCb, true);
 
 		// populate content to the flash part
 
@@ -81,11 +78,8 @@ export class configuration extends workbenchAction {
 		this.cancel = emptyDom().element('div', 'cancel');
 		this.cancel.apendTo(cancelButton);
 
-		this.containerLeft = emptyDom().element('div', 'configuration-container-left');
-		this.containerLeft.apendTo(container);
-
-		this.containerRight = emptyDom().element('div', 'configuration-container-right');
-		this.containerRight.apendTo(container);
+		this.form = emptyDom().element('form', 'configuration-form');
+		this.form.apendTo(container);
 
 		// register handlers
 
@@ -97,75 +91,114 @@ export class configuration extends workbenchAction {
 
 	}
 
-
 	createElement() {
 		for (var prop in defaultConfig) {
 			this.addEntry(prop, defaultConfig[prop]);
 		}
 	}
 
-	addEntry(name: string, value: string) {
+	addEntry(name: string, configuration: { value, pattern, message, placeholder }) {
+		// Create all the DOM elements
 
-		alignFlag = !alignFlag;
-		var container: dom;
+		var entry = emptyDom().element('div', 'configuration-entry');
+		entry.apendTo(this.form);
+		var labelContainer = emptyDom().element('div', 'configuration-label-container');
+		labelContainer.apendTo(entry);
 
-		if (alignFlag) {
-			container = emptyDom().element('div', 'configuration-userInput');
-			container.apendTo(this.containerRight);
-		} else {
-			container = emptyDom().element('div', 'configuration-userInput');
-			container.apendTo(this.containerLeft);
-		}
+		var label = emptyDom().element('label', 'configuration-label');
+		label.apendTo(labelContainer);
 
+		var inputContainer = emptyDom().element('div', '');
+		inputContainer.apendTo(entry);
 
-		var configName = emptyDom().element('div', 'configuration-name');
-		configName.apendTo(container);
-		configName.getHTMLElement().innerText = name;
+		var input = emptyDom().element('input', 'configuration-input');
+		input.apendTo(inputContainer);
 
-		var configSeparator = emptyDom().element('div', 'configuration-separator');
-		configSeparator.apendTo(container);
-		configSeparator.getHTMLElement().innerText = ':';
+		var bar = emptyDom().element('span', 'configuration-bar');
+		bar.apendTo(inputContainer);
 
-		var config = emptyDom().element('input', 'configuration-user-input');
-		config.apendTo(container);
+		var errorMessage = emptyDom().element('div', 'configuration-error');
+		errorMessage.apendTo(inputContainer);
 
-		config.getHTMLElement().id = name;
-		(<HTMLInputElement>config.getHTMLElement()).value = value;
+		var errorMessageLabel = emptyDom().element('label', 'configuration-error-label');
+		errorMessageLabel.apendTo(errorMessage);
 
+		// Configure all the DOM elements created before
 
+		label.getHTMLElement().innerText = name;
+
+		inputContainer.style('position', 'relative');
+
+		console.error(input.style('left'));
+		bar.style('left', input.style('left'));
+
+		entry.setID(name.replace(/\s/g, '_'));
+
+		input.attribute('value', configuration.value);
+		input.attribute('type', 'text');
+		input.attribute('pattern', configuration.pattern);
+		input.attribute('placeholder', configuration.placeholder);
+		input.setID(name.replace(/\s/g, '_'));
+		// input.on('onfocusout', configurationInputFocusOutHandler);
+		// input.on('onfocusin', configurationInputFocusInHandler);
+		(<HTMLInputElement>input.getHTMLElement()).onfocus = configurationInputFocusInHandler;
+		(<HTMLInputElement>input.getHTMLElement()).onblur = configurationInputFocusOutHandler;
+
+		errorMessage.setID("configuration-error");
+		errorMessageLabel.getHTMLElement().innerText = configuration.message;
 	}
 
+}
+
+export function configurationInputFocusOutHandler(this: HTMLInputElement, e: FocusEvent): any {
+	console.log(this);
+	var entry = this.parentElement.parentElement;
+	console.log('#' + entry.id + ' div' + ' .configuration-error');
+	var message = document.querySelectorAll('#' + entry.id + ' div' + ' .configuration-error');
+	console.log(message[0]);
+	if (!this.checkValidity()) {
+		(<HTMLElement>message[0]).style.opacity = '1';
+		(<HTMLElement>message[0]).style.zIndex = '1';
+		(<HTMLElement>message[0]).style.right = '-180px';
+		this.style.borderBottom = '1px solid red';
+	}
+}
+
+export function configurationInputFocusInHandler(this: HTMLElement, e: FocusEvent): any {
+	var entry = this.parentElement.parentElement;
+	console.log('#' + entry.id + ' div' + ' .configuration-error');
+	var message = document.querySelectorAll('#' + entry.id + ' div' + ' .configuration-error');
+	console.log(message[0]);
+	(<HTMLElement>message[0]).style.opacity = '0';
+	(<HTMLElement>message[0]).style.zIndex = '-1';
+	(<HTMLElement>message[0]).style.right = '0px';
+	this.style.borderBottom = '1px solid rgba(0,0,0,0.2)';
 }
 
 function saveConfig() {
 	//get all the config
 
-	var configList = document.querySelectorAll('.configuration-user-input');
+	var configList = document.querySelectorAll('.configuration-input');
 
 	// Check the configurations
 
 	console.log('Config before save');
-	console.log(config);
+	console.log(configList);
 
 	var j = 0;
 	var i = 0;
-
+	console.log((<HTMLInputElement>configList.item(i)).checkValidity());
 	for (i = 0; i < configList.length; i++) {
-		// Do type check
-		if (configList.item(i).id === '9-axis tolarence') {
-			if (parseInt((<HTMLInputElement>configList.item(i)).value) > 100) {
-				console.log('Invalid user iput for "9-axis tolarence"' + (<HTMLInputElement>configList.item(i)).value);
-				configList.item(i).classList.add('error');
-				continue;
-			}
+		if(!((<HTMLInputElement>configList.item(i)).checkValidity())) {
+			continue;
 		}
 		j++;
-		configList.item(i).classList.remove('error');
+		console.log(configList.item(i).id);
 		config[configList.item(i).id] = (<HTMLInputElement>configList.item(i)).value;
 	}
 
-	if(i !== j) {
-		writeMessage('warning', "Invalid config detected. please correct the error");
+	if (i !== j) {
+		writeMessage('error', "Invalid config detected. please correct the error");
 	}
 
 	console.log('Config after save');
@@ -178,12 +211,16 @@ function resetConfig() {
 	console.log('Config before save');
 	console.log(config);
 
-	var configList = document.querySelectorAll('.configuration-user-input');
+	var configList = document.querySelectorAll('.configuration-input');
 
-	config = JSON.parse(JSON.stringify(defaultConfig));
+	for (let entry in defaultConfig) {
+		config[entry] = defaultConfig[entry].value;
+	}
 
 	for (let i = 0; i < configList.length; i++) {
+		(<HTMLInputElement>configList.item(i)).focus();
 		(<HTMLInputElement>configList.item(i)).value = config[configList.item(i).id];
+		(<HTMLInputElement>configList.item(i)).blur();		
 	}
 
 	console.log('Config after save');

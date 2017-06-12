@@ -69,17 +69,13 @@ export function startJLinkServer() {
 
 export function checkJLinkConnection() {
 	console.log("JLink server is running");
-	process.stdout.write("Wating for connection");
+	console.log("Wating for connection");
 
 	return new Promise((r, e) => {
 		jlink.executeCommands(firmware).then(result => {
-			process.stdout.write("\n");
-			console.log("JLink is available");
 			clearInterval(JLinkConnectionTimer);
 			r(result);
 		}).catch(err => {
-			process.stdout.write(".");
-			console.log(err);
 			e(err);
 		})
 	});
@@ -100,6 +96,9 @@ export function flashProgram(path: string, percentageListner: (percentage: numbe
 		console.log('Flashing the binary');
 		executeCommands(flashCommand).then(results => {
 			console.log(results);
+			r(results);
+		}).catch(err => {
+			e(new Error('Flasing of binary failed'));
 		});
 
 	});

@@ -10,15 +10,15 @@ export class activity {
     public label: dom;
     private _isActive: boolean;
     isCurrent: boolean;
-    set isActive(val:boolean) {
-        this._isActive = val;        
-        if(typeof this.label == 'undefined') {
+    set isActive(val: boolean) {
+        this._isActive = val;
+        if (typeof this.label == 'undefined') {
             return;
         }
-        if(val == true) {
+        if (val == true) {
             this.label.addClass('active');
         } else {
-            this.label.removeClass('active');            
+            this.label.removeClass('active');
         }
     }
     get isActive() {
@@ -65,10 +65,10 @@ export class activitybar extends component {
         super.updateStyle();
     }
 
-    addActivity(name: string, workbench: workbenchAction | undefined, context: any, fn: (act: activity, context: any) => void): activity {
+    addActivity(name: string, workbench: workbenchAction | undefined, context: any, fn: (act: activity, context: any) => void, Default?: boolean): activity {
         let act = new activity(name);
 
-        if(typeof workbench !== undefined) {
+        if (typeof workbench !== undefined) {
             act.workbenchaction = <workbenchAction>workbench;
         }
         var item = emptyDom().element('li', 'activity-item');
@@ -83,6 +83,16 @@ export class activitybar extends component {
         //     act.workbench = workbench;
         //     act.workbench.addClass('hide');
         // }
+
+        if (typeof Default !== 'undefined') {
+            if (typeof act.workbenchaction !== 'undefined') {
+                act.workbenchaction.active = true;
+            }
+            act.isActive = true;
+            act.isCurrent = true;
+        }
+
+        console.log(act.isCurrent);
 
         item.on('mouseover', (e: Event) => {
             act.isActive = true;
@@ -104,7 +114,7 @@ export class activitybar extends component {
             e.preventDefault();
             for (let i = 0; i < this.activities.length; i++) {
                 console.log(this.activities[i]);
-                if(this.activities[i] === act) {
+                if (this.activities[i] === act) {
                     if (typeof this.activities[i].workbenchaction !== 'undefined') {
                         this.activities[i].workbenchaction.active = true;
                     }

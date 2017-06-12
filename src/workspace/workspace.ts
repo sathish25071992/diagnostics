@@ -71,94 +71,6 @@ function getTypedData(buf, offset, type) {
 	return value;
 }
 
-// noble.on('stateChange', state => {
-//   if (state === 'poweredOn') {
-// 	//   console.log('Scanning for devices');
-// 	  noble.startScanning([], true);
-//   } else {
-//     noble.stopScanning();
-//   }
-// });
-
-// noble.on('discover', periperal => {
-// 	// console.log('discovered ' + periperal.advertisement.localName);
-// 	if(typeof periperal.advertisement.localName == 'undefined') {
-// 		return;
-// 	}
-// 	else if((periperal.advertisement.localName.indexOf('STT-') == 0) && (periperal.advertisement.serviceData[0].uuid == serviceUUID)) {
-// 		// console.log('device name is ' + periperal.advertisement.localName);
-// 		// console.log(periperal.advertisement.serviceData[0].data);
-// 		for(var prop in serviceDataOffset) {
-// 			serviceData[prop] = getTypedData(periperal.advertisement.serviceData[0].data, serviceDataOffset[prop].offset, serviceDataOffset[prop].type);
-// 			if(prop === 'temperature') {
-// 				serviceData[prop] = serviceData[prop] / 10;
-// 				// console.log('temperature value = ' + serviceData[prop]);
-// 			}
-// 		}
-// 		serviceDataValid = true;
-// 	}
-// })
-
-function handleDiagnostics(result: any) {
-	console.log(result.context);
-
-	if (serviceDataValid == false) {
-		setTimeout(() => startDiagnostics(result.context).then(handleDiagnostics), diagnosticsFrequency);
-		return;
-	}
-	console.log(result.diagnosticsData);
-	// Check condition for THA verification
-
-	var info = 'Temperaure value = ' + (result.diagnosticsData.temperatureValue / 10) + '\n';
-	var info = info + 'Humidity value value = ' + result.diagnosticsData.humidityValue;
-
-	result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('idle');
-	result.context.diagnostics.temperatureResult.diagnosticsContent.diagnosticsinfo(info);
-
-	if (((result.diagnosticsData.temperatureValue - temperatureThres) > serviceData.temperature) ||
-		((result.diagnosticsData.temperatureValue - temperatureThres) < serviceData.temperature)) {
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('failed');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('success');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.diagnosticsresult('Failed');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.addClass('failed');
-	} else {
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('failed');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.removeClass('success');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.diagnosticsresult('Success');
-		result.context.diagnostics.temperatureResult.diagnosticsContent.content.contentContainer.addClass('success');
-	}
-
-	var info = 'Ambient light value = ' + (result.diagnosticsData.AmbientlightValue);
-
-	result.context.diagnostics.ambientLightResult.diagnosticsContent.content.contentContainer.removeClass('idle');
-	result.context.diagnostics.ambientLightResult.diagnosticsContent.diagnosticsinfo(info);
-	result.context.diagnostics.ambientLightResult.diagnosticsContent.diagnosticsresult('Success');
-	result.context.diagnostics.ambientLightResult.diagnosticsContent.content.contentContainer.addClass('success');
-
-	var info = '9-axis value = ' + (result.diagnosticsData.AccXData);
-
-	result.context.diagnostics._9axisResult.diagnosticsContent.content.contentContainer.removeClass('idle');
-	result.context.diagnostics._9axisResult.diagnosticsContent.diagnosticsinfo(info);
-	result.context.diagnostics._9axisResult.diagnosticsContent.diagnosticsresult('Success');
-	result.context.diagnostics._9axisResult.diagnosticsContent.content.contentContainer.addClass('success');
-	// if(((result.diagnosticsData.humidityValue) > (serviceData.humidity + humidityThres)) ||  
-	// ((result.diagnosticsData.humidityValue) < (serviceData.humidity - humidityThres))) {
-	// 	console.error('Humidity sensor is not proper');
-	// }
-
-	// if(((result.diagnosticsData.AmbientlightValue) > (serviceData.ambientLight + ambientThres)) ||  
-	// ((result.diagnosticsData.AmbientlightValue) < (serviceData.ambientLight - ambientThres))) {
-	// 	console.error('Ambient light sensor is not proper');
-	// }
-	// console.log("Diagnostics is complete!!!");
-	// setTimeout(() => startDiagnostics().then(handleDiagnostics), diagnosticsFrequency);
-}
-
-// Add check for the timestamp that the service data is latest ???
-
-//startDiagnostics().then(handleDiagnostics);
-
-
 export class workspace {
 	private parent: dom;
 	private workspaceContainer: dom;
@@ -237,44 +149,16 @@ export class workspace {
 
 			this.createElements();
 
-			// this.activitybar.addActivity('configuration', undefined, this, configWorkbenchHandler, );
-			// this.activitybar.addActivity('upgrade', undefined, this, upgradeWorkbenchHandler);
-			// this.activitybar.addActivity('diagnostics', this.diagnostics.container, this, diagnosticsWorkbenchHandler);
-			// // this.workbench.addWorkbenchAction('welcome');
-
 			this.layout();
 			this.registerListeners();
 			
-			// Create actions
-
-			// Creating diagnostics Action.
-
-
 			this.configuration = new configuration(this.activitybar, this.workbench);
 			this.flash = new flash(this.activitybar, this.workbench);
 			this.diagnostics = new diagnostics(this.activitybar, this.workbench);
 
-			// Add workbenchaction to workbench
 
-			// createWorkBenchAction();
-
-			// Add activity to the activity bar
-			// this.activitybar.addActivity('upgrade', undefined, this, upgradeWorkbenchHandler);
-			// this.activitybar.addActivity('configuration', undefined, this, configWorkbenchHandler);
-			
 		})
 	}
-
-	// createWorkBenchAction() {
-	// 	this.workbench.addWorkbench();
-    //     this.addWorkbench(this.diagnostics.container);
-    // }
-}
-
-function diagnosticsWorkbenchHandler(act: activity, context: workspace): void {
-	console.log('diagnostics workbench activated');
-	startDiagnostics(context).then(handleDiagnostics);
-	console.log(act);
 }
 
 function configWorkbenchHandler(act: activity, context: workspace): void {
